@@ -1,0 +1,746 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Exam System - Complete Flowcharts</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/10.6.1/mermaid.min.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap');
+        
+        * {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        
+        .gradient-text {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .nav-btn {
+            transition: all 0.3s ease;
+        }
+        
+        .nav-btn:hover {
+            transform: scale(1.05);
+        }
+        
+        .mermaid {
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            margin: 20px 0;
+            display: flex;
+            justify-content: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        
+        .flowchart-section {
+            margin: 40px 0;
+            padding: 30px;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        
+        .flowchart-title {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid #667eea;
+        }
+        
+        .toc-item {
+            padding: 10px 15px;
+            margin: 5px 0;
+            background: #f8f9ff;
+            border-left: 4px solid #667eea;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .toc-item:hover {
+            background: #e8ebff;
+            transform: translateX(5px);
+        }
+        
+        .toc-item a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+        }
+        
+        .floating {
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="gradient-bg text-white py-4 px-6 fixed w-full z-50 shadow-lg">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <h1 class="text-2xl font-bold">Smart ERP - Flowcharts</h1>
+            <div class="space-x-4">
+                <a href="index.html" class="nav-btn px-4 py-2 rounded-lg hover:bg-white hover:bg-opacity-20">Home</a>
+                <a href="#architecture" class="nav-btn px-4 py-2 rounded-lg hover:bg-white hover:bg-opacity-20">Architecture</a>
+                <a href="#student" class="nav-btn px-4 py-2 rounded-lg hover:bg-white hover:bg-opacity-20">Student</a>
+                <a href="#professor" class="nav-btn px-4 py-2 rounded-lg hover:bg-white hover:bg-opacity-20">Professor</a>
+                <a href="#coordinator" class="nav-btn px-4 py-2 rounded-lg hover:bg-white hover:bg-opacity-20">Coordinator</a>
+                <a href="#hod" class="nav-btn px-4 py-2 rounded-lg hover:bg-white hover:bg-opacity-20">HOD</a>
+                <a href="#principal" class="nav-btn px-4 py-2 rounded-lg hover:bg-white hover:bg-opacity-20">Principal</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="gradient-bg text-white py-20 px-6 pt-32">
+        <div class="max-w-7xl mx-auto text-center">
+            <div class="floating mb-8">
+                <svg class="w-24 h-24 mx-auto" fill="white" viewBox="0 0 24 24">
+                    <path d="M12 2L2 7v10c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-10-5zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V7.3l7-3.11v8.8z"/>
+                </svg>
+            </div>
+            <h1 class="text-5xl font-bold mb-6">System Flowcharts & Workflows</h1>
+            <p class="text-xl opacity-90">Complete visualization of the Smart Exam & Learning Management System</p>
+        </div>
+    </section>
+
+    <!-- Table of Contents -->
+    <section class="max-w-7xl mx-auto px-6 py-12">
+        <div class="bg-white rounded-lg p-8 shadow-lg mb-8">
+            <h2 class="text-3xl font-bold gradient-text mb-6">📑 Quick Navigation</h2>
+            <div class="grid grid-cols-2 gap-4">
+                <div class="toc-item"><a href="#system-architecture">1. Overall System Architecture Flow</a></div>
+                <div class="toc-item"><a href="#student-flow">2. Student Complete Flow</a></div>
+                <div class="toc-item"><a href="#professor-flow">3. Professor Complete Flow</a></div>
+                <div class="toc-item"><a href="#coordinator-flow">4. Class Coordinator Complete Flow</a></div>
+                <div class="toc-item"><a href="#hod-flow">5. HOD Complete Flow</a></div>
+                <div class="toc-item"><a href="#principal-flow">6. Principal Complete Flow</a></div>
+                <div class="toc-item"><a href="#exam-conduction">7. Exam Conduction Detailed Flow</a></div>
+                <div class="toc-item"><a href="#payment">8. Payment & Financial Flow</a></div>
+                <div class="toc-item"><a href="#ai-features">9. AI Features Integration Flow</a></div>
+                <div class="toc-item"><a href="#data-flow">10. Data Flow & System Integration</a></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Flowchart Sections -->
+    <div class="max-w-7xl mx-auto px-6 pb-12">
+        
+        <!-- 1. Overall System Architecture Flow -->
+        <section id="system-architecture" class="flowchart-section">
+            <h2 class="flowchart-title">1. Overall System Architecture Flow</h2>
+            <div class="mermaid">
+graph TB
+    Start([System Entry]) --> Login{User Login}
+    Login --> Student[Student Portal]
+    Login --> Professor[Professor Portal]
+    Login --> Coordinator[Class Coordinator Portal]
+    Login --> HOD[HOD Portal]
+    Login --> Principal[Principal Portal]
+    
+    Student --> S1[Registration & Approval]
+    Student --> S2[Exam Management]
+    Student --> S3[Notes Access]
+    Student --> S4[Results & Analytics]
+    Student --> S5[AI Assistant]
+    
+    Professor --> P1[Create Exams]
+    Professor --> P2[Upload Notes]
+    Professor --> P3[View Analytics]
+    Professor --> P4[Financial Dashboard]
+    Professor --> P5[AI Insights]
+    
+    Coordinator --> C1[Approve Students]
+    Coordinator --> C2[Assign Professors]
+    Coordinator --> C3[Class Analytics]
+    Coordinator --> C4[Attendance Management]
+    Coordinator --> C5[AI Recommendations]
+    
+    HOD --> H1[Approve Coordinators]
+    HOD --> H2[Department Analytics]
+    HOD --> H3[Parent Interface]
+    HOD --> H4[Resource Management]
+    HOD --> H5[AI Strategic Insights]
+    
+    Principal --> PR1[Approve HOD & Professors]
+    Principal --> PR2[College-wide Analytics]
+    Principal --> PR3[Strategic Planning]
+    Principal --> PR4[Stakeholder Management]
+    Principal --> PR5[AI Executive Assistant]
+    
+    style Start fill:#667eea,stroke:#333,stroke-width:3px,color:#fff
+    style Student fill:#4CAF50,stroke:#333,stroke-width:2px,color:#fff
+    style Professor fill:#2196F3,stroke:#333,stroke-width:2px,color:#fff
+    style Coordinator fill:#FF9800,stroke:#333,stroke-width:2px,color:#fff
+    style HOD fill:#9C27B0,stroke:#333,stroke-width:2px,color:#fff
+    style Principal fill:#F44336,stroke:#333,stroke-width:2px,color:#fff
+            </div>
+        </section>
+
+        <!-- 2. Student Complete Flow -->
+        <section id="student-flow" class="flowchart-section">
+            <h2 class="flowchart-title">2. Student Complete Flow</h2>
+            <div class="mermaid">
+graph TD
+    A[Student Registration] --> B{Class Coordinator Approval}
+    B -->|Approved| C[Account Activated]
+    B -->|Rejected| D[Resubmit with Changes]
+    D --> A
+    
+    C --> E[Student Dashboard]
+    E --> F[Upcoming Exams Tab]
+    E --> G[Ongoing Exams Tab]
+    E --> H[Past Results Tab]
+    E --> I[Notes Section]
+    E --> J[AI Chat Assistant]
+    
+    F --> F1[Browse Available Exams]
+    F1 --> F2[View Exam Details]
+    F2 --> F3[Subject/Topic/Date/Time/Price]
+    F3 --> F4{Paid Exam?}
+    F4 -->|Yes| F5[Payment Gateway]
+    F4 -->|No| F7[Direct Enrollment]
+    F5 --> F6[Razorpay Integration]
+    F6 --> F7[Enrollment Confirmed]
+    
+    G --> G1[Active Exam Window]
+    G1 --> G2[JEE/NEET Interface]
+    G2 --> G3[Question Navigation Panel]
+    G2 --> G4[Timer Display]
+    G2 --> G5[Mark for Review]
+    G2 --> G6[Submit Button]
+    
+    G6 --> G11{Auto-save Enabled}
+    G11 -->|After Each Question| G12[Server Storage]
+    G6 --> G17[Summary Window]
+    G17 --> G18[Final Submission]
+    
+    G18 --> G19{Result Display Mode}
+    G19 -->|Immediate| G20[Show Result Now]
+    G19 -->|Scheduled| G21[Wait for Release]
+    
+    G20 --> G22[Detailed Analysis]
+    G21 --> G22
+    
+    G22 --> G23[Score Breakdown]
+    G22 --> G24[Topic-wise Analysis]
+    G22 --> G25[Percentile Ranking]
+    
+    H --> H1[View All Past Exams]
+    H1 --> H2[Detailed Result View]
+    H2 --> H3[Performance Trends]
+    
+    I --> I1[Subject-wise Notes]
+    I1 --> I2[View/Download Notes]
+    I1 --> I3[Search within Notes]
+    
+    J --> J1[Ask About Wrong Answers]
+    J --> J2[Study Recommendations]
+    J --> J3[Concept Clarification]
+    J1 --> J6[AI Response]
+    J2 --> J6
+    J3 --> J6
+    
+    style A fill:#4CAF50,stroke:#333,stroke-width:3px,color:#fff
+    style G2 fill:#FF5722,stroke:#333,stroke-width:3px,color:#fff
+    style G22 fill:#2196F3,stroke:#333,stroke-width:3px,color:#fff
+    style J fill:#9C27B0,stroke:#333,stroke-width:3px,color:#fff
+            </div>
+        </section>
+
+        <!-- 3. Professor Complete Flow -->
+        <section id="professor-flow" class="flowchart-section">
+            <h2 class="flowchart-title">3. Professor Complete Flow</h2>
+            <div class="mermaid">
+graph TD
+    A[Professor Registration] --> B{Principal Approval}
+    B -->|Approved| C[Account Activated]
+    B -->|Rejected| D[Resubmit Application]
+    D --> A
+    
+    C --> E[Professor Dashboard]
+    E --> F[Create New Exam]
+    E --> G[Upload Notes]
+    E --> H[View Analytics]
+    E --> I[Financial Dashboard]
+    E --> J[AI Assistant]
+    
+    F --> F1{Input Method}
+    F1 -->|Manual Entry| F2[Question Builder]
+    F1 -->|Bulk Upload| F3[Download Template]
+    
+    F3 --> F4[Fill Template]
+    F4 --> F5[Upload File]
+    F5 --> F7[Questions Imported]
+    
+    F2 --> F10[Question Preview]
+    F7 --> F10
+    F10 --> F11[Edit Interface]
+    F11 --> F12[Add Images]
+    F11 --> F13[Set Marks]
+    F11 --> F14[Set Difficulty]
+    
+    F14 --> F18[Configure Settings]
+    F18 --> F19[Set Price]
+    F18 --> F20[Select Date & Time]
+    F18 --> F21[Choose Display Mode]
+    
+    F21 --> F27[Preview Exam]
+    F27 --> F28{Publish?}
+    F28 -->|Yes| F29[Exam Published]
+    F28 -->|Edit| F11
+    
+    G --> G1[Select Subject]
+    G1 --> G2[Upload Files]
+    G2 --> G3[Add Description]
+    G3 --> G5[Publish Notes]
+    
+    H --> H1[Performance Dashboard]
+    H1 --> H2[Class Average Scores]
+    H1 --> H3[Enrollment Analytics]
+    H1 --> H4[Subject Analysis]
+    
+    I --> I1[Total Earnings]
+    I1 --> I2[Exam-wise Revenue]
+    I1 --> I3[Monthly Reports]
+    
+    J --> J1[Voice/Text Queries]
+    J1 --> J2[Show last results]
+    J1 --> J3[Revenue forecast]
+    J2 --> J7[AI Insights]
+    J3 --> J7
+    
+    style A fill:#2196F3,stroke:#333,stroke-width:3px,color:#fff
+    style F fill:#FF9800,stroke:#333,stroke-width:3px,color:#fff
+    style H fill:#4CAF50,stroke:#333,stroke-width:3px,color:#fff
+    style J fill:#9C27B0,stroke:#333,stroke-width:3px,color:#fff
+            </div>
+        </section>
+
+        <!-- 4. Class Coordinator Complete Flow -->
+        <section id="coordinator-flow" class="flowchart-section">
+            <h2 class="flowchart-title">4. Class Coordinator Complete Flow</h2>
+            <div class="mermaid">
+graph TD
+    A[Coordinator Registration] --> B{HOD Approval}
+    B -->|Approved| C[Account Activated]
+    B -->|Rejected| D[Resubmit]
+    D --> A
+    
+    C --> E[Coordinator Dashboard]
+    E --> F[Student Management]
+    E --> G[Professor Assignment]
+    E --> H[Class Analytics]
+    E --> I[Attendance Management]
+    E --> J[Communication Hub]
+    
+    F --> F1[Pending Registrations]
+    F1 --> F2[Review Application]
+    F2 --> F3{Approve/Reject}
+    F3 -->|Approve| F5[Activate Account]
+    F3 -->|Reject| F6[Send Feedback]
+    
+    G --> G1[View Available Professors]
+    G1 --> G2[Assign to Subjects]
+    G2 --> G3[Create Schedule]
+    
+    H --> H1[Class Performance]
+    H1 --> H2[Average Scores]
+    H1 --> H3[Participation Rates]
+    H1 --> H4[Trend Analysis]
+    
+    I --> I1[Daily Attendance]
+    I1 --> I2[Attendance Reports]
+    I2 --> I3[Parent Notifications]
+    
+    J --> J1[Class Announcements]
+    J1 --> J2[Parent Communication]
+    J2 --> J3[Professor Coordination]
+    
+    style A fill:#FF9800,stroke:#333,stroke-width:3px,color:#fff
+    style F fill:#4CAF50,stroke:#333,stroke-width:3px,color:#fff
+    style H fill:#2196F3,stroke:#333,stroke-width:3px,color:#fff
+    style J fill:#9C27B0,stroke:#333,stroke-width:3px,color:#fff
+            </div>
+        </section>
+
+        <!-- 5. HOD Complete Flow -->
+        <section id="hod-flow" class="flowchart-section">
+            <h2 class="flowchart-title">5. HOD Complete Flow</h2>
+            <div class="mermaid">
+graph TD
+    A[HOD Registration] --> B{Principal Approval}
+    B -->|Approved| C[Account Activated]
+    B -->|Rejected| D[Resubmit]
+    D --> A
+    
+    C --> E[HOD Dashboard]
+    E --> F[Approvals Management]
+    E --> G[Department Analytics]
+    E --> H[Parent Meeting Interface]
+    E --> I[Resource Management]
+    E --> J[AI Assistant]
+    
+    F --> F1[Coordinator Approvals]
+    F1 --> F2[Review Applications]
+    F2 --> F3{Approve/Reject}
+    F3 -->|Approve| F6[Activate]
+    
+    G --> G1[All Students Overview]
+    G1 --> G2[Department Results]
+    G1 --> G3[Year-wise Comparison]
+    
+    G --> G6[All Professors Analytics]
+    G6 --> G7[Teaching Effectiveness]
+    G6 --> G8[Student Feedback]
+    
+    H --> H1[Quick Student Search]
+    H1 --> H2[QR Code Scan]
+    H1 --> H3[Instant Profile Load]
+    
+    H3 --> H5[Result Showcase]
+    H5 --> H6[Performance Charts]
+    H6 --> H7[Improvement Analytics]
+    
+    I --> I1[Faculty Assignment]
+    I1 --> I2[Workload Balancing]
+    
+    J --> J1[Department AI Assistant]
+    J1 --> J2[Show summary]
+    J1 --> J3[Department insights]
+    
+    style A fill:#9C27B0,stroke:#333,stroke-width:3px,color:#fff
+    style H fill:#FF5722,stroke:#333,stroke-width:3px,color:#fff
+    style J fill:#2196F3,stroke:#333,stroke-width:3px,color:#fff
+            </div>
+        </section>
+
+        <!-- 6. Principal Complete Flow -->
+        <section id="principal-flow" class="flowchart-section">
+            <h2 class="flowchart-title">6. Principal Complete Flow</h2>
+            <div class="mermaid">
+graph TD
+    A[Principal Login] --> B[Executive Dashboard]
+    
+    B --> C[Approval System]
+    B --> D[College-wide Analytics]
+    B --> E[Strategic Planning]
+    B --> F[Stakeholder Management]
+    B --> G[AI Executive Assistant]
+    
+    C --> C1[HOD Approvals]
+    C1 --> C2[Department Assignment]
+    
+    C --> C3[Professor Approvals]
+    C3 --> C4[Subject Assignment]
+    
+    D --> D1[Academic Performance]
+    D1 --> D2[Overall Pass Rate]
+    D1 --> D3[Department Ranking]
+    
+    D --> D7[Financial Health]
+    D7 --> D8[Total Revenue]
+    D7 --> D9[Department Earnings]
+    
+    D --> D14[Human Resources]
+    D14 --> D15[Faculty Overview]
+    D14 --> D16[Performance Evaluation]
+    
+    E --> E1[Vision & Mission]
+    E --> E6[5-year Roadmap]
+    E --> E11[Compliance Tracking]
+    
+    F --> F1[Parent Relations]
+    F --> F6[Industry Partnerships]
+    F --> F11[Alumni Network]
+    
+    G --> G1[Voice/Text Queries]
+    G1 --> G2[Department insights]
+    G1 --> G3[Revenue forecast]
+    G2 --> G8[Predictive Analytics]
+    G3 --> G8
+    
+    style A fill:#F44336,stroke:#333,stroke-width:4px,color:#fff
+    style D fill:#4CAF50,stroke:#333,stroke-width:3px,color:#fff
+    style E fill:#2196F3,stroke:#333,stroke-width:3px,color:#fff
+    style G fill:#9C27B0,stroke:#333,stroke-width:3px,color:#fff
+            </div>
+        </section>
+
+        <!-- 7. Exam Conduction Detailed Flow -->
+        <section id="exam-conduction" class="flowchart-section">
+            <h2 class="flowchart-title">7. Exam Conduction Detailed Flow</h2>
+            <div class="mermaid">
+graph TD
+    A[Student Enrolls in Exam] --> B{Payment Required?}
+    B -->|Yes| C[Razorpay Payment]
+    B -->|No| D[Direct Enrollment]
+    
+    C --> C1[Select Payment Method]
+    C1 --> P[Process Payment]
+    P --> PS{Payment Status}
+    PS -->|Success| D
+    PS -->|Failed| T[Payment Failed]
+    
+    D --> E[Enrollment Confirmed]
+    E --> F[Send Notifications]
+    F --> G[Reminder System]
+    G --> H[Exam Start Time]
+    
+    H --> I{Student Joins?}
+    I -->|Yes/Late| J[Exam Window Opens]
+    
+    J --> L[JEE/NEET Interface]
+    L --> M[Question Navigation]
+    L --> N[Timer Display]
+    
+    N --> O[Exam Begins]
+    O --> Q[Question Display]
+    Q --> V[Answer Selection]
+    V --> W[Action Buttons]
+    
+    W --> X[Save & Next]
+    X --> AA[Auto-save Triggered]
+    AA --> AB{Internet Connected?}
+    AB -->|Yes| AC[Save to Server]
+    AB -->|No| AD[Save to Local]
+    AD --> AE{Reconnected?}
+    AE -->|Yes| AG[Sync to Server]
+    
+    N --> AO[Timer Countdown]
+    AO --> AP{Time Expired?}
+    AP -->|Yes| AQ[Auto-Submit]
+    
+    W --> AR[Submit Exam]
+    AR --> BA[Final Submission]
+    AQ --> BA
+    
+    BA --> BI[Result Dashboard]
+    BI --> BJ[Score Display]
+    BI --> BN[Detailed Analytics]
+    BN --> BT[Performance Insights]
+    
+    style A fill:#4CAF50,stroke:#333,stroke-width:3px,color:#fff
+    style L fill:#FF5722,stroke:#333,stroke-width:3px,color:#fff
+    style AA fill:#2196F3,stroke:#333,stroke-width:3px,color:#fff
+    style BA fill:#9C27B0,stroke:#333,stroke-width:3px,color:#fff
+    style BI fill:#FF9800,stroke:#333,stroke-width:3px,color:#fff
+            </div>
+        </section>
+
+        <!-- 8. Payment & Financial Flow -->
+        <section id="payment" class="flowchart-section">
+            <h2 class="flowchart-title">8. Payment & Financial Flow</h2>
+            <div class="mermaid">
+graph TD
+    A[Exam Published with Price] --> B[Student Views Exam]
+    B --> C[Clicks Enroll]
+    C --> D[Payment Page Loads]
+    
+    D --> E[Razorpay Integration]
+    E --> G[Payment Methods]
+    
+    G --> H[UPI]
+    G --> I[Credit/Debit Card]
+    G --> J[Net Banking]
+    G --> K[Wallets]
+    
+    H --> P[Initiate Payment]
+    I --> P
+    J --> P
+    K --> P
+    
+    P --> Q[Razorpay Processing]
+    Q --> R{Payment Status}
+    
+    R -->|Success| S[Payment Confirmed]
+    R -->|Failed| T[Payment Failed]
+    
+    S --> Y[Update Database]
+    Y --> Z[Student Record]
+    Y --> AA[Professor Revenue]
+    Y --> AB[Transaction Log]
+    
+    Z --> AC[Grant Exam Access]
+    AC --> AD[Send Confirmation]
+    
+    AA --> AG[Professor Dashboard]
+    AG --> AH[Earnings Update]
+    
+    AB --> AK[Financial Reports]
+    AK --> AL[Transaction History]
+    
+    AG --> AX[Payout System]
+    AX --> BA[Bank Transfer]
+    BA --> BB[Payout Completed]
+    
+    AK --> BD[HOD Financial View]
+    AK --> BI[Principal Financial View]
+    
+    style E fill:#3498db,stroke:#333,stroke-width:3px,color:#fff
+    style S fill:#4CAF50,stroke:#333,stroke-width:3px,color:#fff
+    style T fill:#F44336,stroke:#333,stroke-width:3px,color:#fff
+    style AG fill:#FF9800,stroke:#333,stroke-width:3px,color:#fff
+            </div>
+        </section>
+
+        <!-- 9. AI Features Integration Flow -->
+        <section id="ai-features" class="flowchart-section">
+            <h2 class="flowchart-title">9. AI Features Integration Flow</h2>
+            <div class="mermaid">
+graph TD
+    A[AI System] --> B[Student AI Assistant]
+    A --> C[Professor AI Insights]
+    A --> D[Coordinator AI Analytics]
+    A --> E[HOD AI Strategy]
+    A --> F[Principal AI Executive]
+    
+    B --> B1[Voice/Text Input]
+    B1 --> B2[Where did I go wrong?]
+    B1 --> B3[Study Recommendations]
+    
+    B2 --> B6[Analyze Results]
+    B6 --> B7[Identify Gaps]
+    B7 --> B10[Recommend Resources]
+    
+    B3 --> B11[Performance Analysis]
+    B11 --> B12[Weak Topics]
+    B12 --> B14[Study Plan]
+    
+    C --> C1[Voice Queries]
+    C1 --> C2[Show results]
+    C1 --> C3[Struggling students]
+    
+    C2 --> C6[Data Retrieval]
+    C6 --> C8[Insights]
+    
+    D --> D1[Class Insights]
+    D1 --> D2[Where class spending time]
+    D1 --> D3[Intervention needs]
+    
+    D2 --> D5[Engagement Analysis]
+    D5 --> D9[Optimization Tips]
+    
+    E --> E1[Department Strategy]
+    E1 --> E2[Performance summary]
+    E1 --> E3[Professor effectiveness]
+    
+    E2 --> E5[Analytics]
+    E5 --> E9[Improvements]
+    
+    F --> F1[Executive Queries]
+    F1 --> F2[Department comparison]
+    F1 --> F3[Revenue forecast]
+    
+    F2 --> F6[Insights]
+    F3 --> F16[Predictions]
+    F6 --> F21[Recommendations]
+    
+    style A fill:#9C27B0,stroke:#333,stroke-width:4px,color:#fff
+    style B fill:#4CAF50,stroke:#333,stroke-width:3px,color:#fff
+    style C fill:#2196F3,stroke:#333,stroke-width:3px,color:#fff
+    style D fill:#FF9800,stroke:#333,stroke-width:3px,color:#fff
+    style E fill:#673AB7,stroke:#333,stroke-width:3px,color:#fff
+    style F fill:#F44336,stroke:#333,stroke-width:3px,color:#fff
+            </div>
+        </section>
+
+        <!-- 10. Data Flow & System Integration -->
+        <section id="data-flow" class="flowchart-section">
+            <h2 class="flowchart-title">10. Data Flow & System Integration</h2>
+            <div class="mermaid">
+graph LR
+    A[User Interface] --> B[API Gateway]
+    B --> C[Authentication]
+    C --> E[RBAC]
+    
+    E --> F[User Management]
+    E --> G[Exam Service]
+    E --> H[Analytics]
+    E --> I[Payment Service]
+    E --> J[Notification]
+    E --> K[AI/ML Service]
+    
+    F --> L[(PostgreSQL)]
+    G --> L
+    H --> M[(MongoDB)]
+    I --> L
+    J --> N[(Redis)]
+    K --> O[(Vector DB)]
+    
+    G --> P[S3 Storage]
+    
+    I --> Q[Razorpay API]
+    J --> R[SMS Gateway]
+    J --> S[Email Service]
+    K --> T[OpenAI API]
+    
+    L --> U[Backup System]
+    
+    H --> W[Real-time Analytics]
+    
+    style A fill:#667eea,stroke:#333,stroke-width:2px,color:#fff
+    style E fill:#764ba2,stroke:#333,stroke-width:3px,color:#fff
+    style L fill:#4CAF50,stroke:#333,stroke-width:2px,color:#fff
+    style K fill:#9C27B0,stroke:#333,stroke-width:2px,color:#fff
+            </div>
+        </section>
+
+    </div>
+
+    <!-- Footer -->
+    <footer class="gradient-bg text-white py-8">
+        <div class="max-w-7xl mx-auto text-center">
+            <p class="text-lg mb-4">Smart Exam & Learning Management System - Complete Flowcharts</p>
+            <p class="text-gray-300">© 2026 - Revolutionizing Education Through Technology</p>
+            <p class="mt-4"><a href="index.html" class="underline hover:text-gray-200">Back to Home</a></p>
+        </div>
+    </footer>
+
+    <script>
+        mermaid.initialize({ 
+            startOnLoad: true,
+            theme: 'default',
+            flowchart: {
+                useMaxWidth: true,
+                htmlLabels: true,
+                curve: 'basis'
+            }
+        });
+
+        // Smooth scrolling
+        document.addEventListener('DOMContentLoaded', function() {
+            const links = document.querySelectorAll('a[href^="#"]');
+            links.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        const navHeight = 80;
+                        const targetPosition = target.offsetTop - navHeight;
+                        window.scrollTo({
+                            top: targetPosition,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
