@@ -1,0 +1,1717 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Exam & Learning Management System - Project Blueprint</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/10.6.1/mermaid.min.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap');
+        
+        * {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        
+        .gradient-text {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+        
+        .feature-card {
+            background: white;
+            border-radius: 16px;
+            padding: 24px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+        
+        .nav-btn {
+            transition: all 0.3s ease;
+        }
+        
+        .nav-btn:hover {
+            transform: scale(1.05);
+        }
+        
+        .section {
+            min-height: 100vh;
+            padding: 60px 20px;
+        }
+        
+        .ai-glow {
+            box-shadow: 0 0 30px rgba(102, 126, 234, 0.3);
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+        
+        .floating {
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        .mermaid {
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        
+        .tech-stack-badge {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 600;
+            display: inline-block;
+            margin: 4px;
+        }
+        
+        .metric-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 16px;
+            text-align: center;
+        }
+        
+        .role-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 32px;
+            margin: 0 auto 20px;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="gradient-bg text-white py-4 px-6 fixed w-full z-50 shadow-lg">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <h1 class="text-2xl font-bold">Smart ERP Platform</h1>
+            <div class="space-x-4">
+                <button onclick="scrollToSection('overview')" class="nav-btn px-4 py-2 rounded-lg hover:bg-white hover:bg-opacity-20">Overview</button>
+                <button onclick="scrollToSection('roles')" class="nav-btn px-4 py-2 rounded-lg hover:bg-white hover:bg-opacity-20">User Roles</button>
+                <button onclick="scrollToSection('features')" class="nav-btn px-4 py-2 rounded-lg hover:bg-white hover:bg-opacity-20">Features</button>
+                <button onclick="scrollToSection('architecture')" class="nav-btn px-4 py-2 rounded-lg hover:bg-white hover:bg-opacity-20">Architecture</button>
+                <button onclick="scrollToSection('ai')" class="nav-btn px-4 py-2 rounded-lg hover:bg-white hover:bg-opacity-20">AI Features</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="overview" class="section gradient-bg text-white flex items-center">
+        <div class="max-w-7xl mx-auto text-center">
+            <div class="floating mb-8">
+                <svg class="w-32 h-32 mx-auto" fill="white" viewBox="0 0 24 24">
+                    <path d="M12 2L2 7v10c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-10-5zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V7.3l7-3.11v8.8z"/>
+                </svg>
+            </div>
+            <h1 class="text-6xl font-bold mb-6">Smart Exam & Learning Management System</h1>
+            <p class="text-2xl mb-8 opacity-90">Revolutionary ERP Platform for Modern Education</p>
+            <div class="grid grid-cols-4 gap-6 max-w-4xl mx-auto">
+                <div class="metric-card card-hover">
+                    <div class="text-4xl font-bold">5</div>
+                    <div class="text-sm opacity-90 mt-2">User Roles</div>
+                </div>
+                <div class="metric-card card-hover">
+                    <div class="text-4xl font-bold">50+</div>
+                    <div class="text-sm opacity-90 mt-2">Features</div>
+                </div>
+                <div class="metric-card card-hover">
+                    <div class="text-4xl font-bold">AI</div>
+                    <div class="text-sm opacity-90 mt-2">Powered</div>
+                </div>
+                <div class="metric-card card-hover">
+                    <div class="text-4xl font-bold">24/7</div>
+                    <div class="text-sm opacity-90 mt-2">Accessible</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Key Problems Solved -->
+    <section class="section bg-white">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-5xl font-bold gradient-text mb-12 text-center">Problems We Solve</h2>
+            <div class="grid grid-cols-3 gap-8">
+                <div class="feature-card card-hover">
+                    <div class="text-4xl mb-4">⏰</div>
+                    <h3 class="text-xl font-bold mb-3">Time-Consuming Manual Processes</h3>
+                    <p class="text-gray-600">Automated exam creation, result processing, and student management reduces workload by 80%</p>
+                </div>
+                <div class="feature-card card-hover">
+                    <div class="text-4xl mb-4">📊</div>
+                    <h3 class="text-xl font-bold mb-3">Poor Data Visibility</h3>
+                    <p class="text-gray-600">Real-time analytics and dashboards for instant insights at every administrative level</p>
+                </div>
+                <div class="feature-card card-hover">
+                    <div class="text-4xl mb-4">🔒</div>
+                    <h3 class="text-xl font-bold mb-3">Security & Integrity Issues</h3>
+                    <p class="text-gray-600">Secure exam conduction with anti-cheating measures and automated result processing</p>
+                </div>
+                <div class="feature-card card-hover">
+                    <div class="text-4xl mb-4">💰</div>
+                    <h3 class="text-xl font-bold mb-3">Revenue Management</h3>
+                    <p class="text-gray-600">Integrated payment gateway with automatic tracking and financial reporting</p>
+                </div>
+                <div class="feature-card card-hover">
+                    <div class="text-4xl mb-4">📱</div>
+                    <h3 class="text-xl font-bold mb-3">Accessibility Challenges</h3>
+                    <p class="text-gray-600">24/7 access from any device with offline capability and auto-save features</p>
+                </div>
+                <div class="feature-card card-hover">
+                    <div class="text-4xl mb-4">🤖</div>
+                    <h3 class="text-xl font-bold mb-3">Lack of Personalized Insights</h3>
+                    <p class="text-gray-600">AI-powered analytics providing actionable recommendations for every stakeholder</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- User Roles Overview -->
+    <section id="roles" class="section bg-gray-50">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-5xl font-bold gradient-text mb-12 text-center">User Roles & Access Hierarchy</h2>
+            <div class="bg-white rounded-2xl p-8 shadow-lg">
+                <div class="mermaid">
+graph TD
+    A[Principal] --> B[HOD]
+    A --> C[Professor Approval]
+    B --> D[Class Coordinator Approval]
+    D --> E[Student Approval]
+    C --> F[Exam Creation]
+    C --> G[Notes Upload]
+    F --> H[Student Enrollment]
+    G --> H
+    H --> I[Payment Gateway]
+    I --> J[Exam Participation]
+    J --> K[AI-Powered Analytics]
+    
+    style A fill:#667eea,stroke:#333,stroke-width:2px,color:#fff
+    style B fill:#764ba2,stroke:#333,stroke-width:2px,color:#fff
+    style D fill:#667eea,stroke:#333,stroke-width:2px,color:#fff
+    style E fill:#764ba2,stroke:#333,stroke-width:2px,color:#fff
+    style C fill:#667eea,stroke:#333,stroke-width:2px,color:#fff
+    style K fill:#ff6b6b,stroke:#333,stroke-width:2px,color:#fff
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Student Portal -->
+    <section id="student" class="section bg-white">
+        <div class="max-w-7xl mx-auto">
+            <div class="role-icon">👨‍🎓</div>
+            <h2 class="text-5xl font-bold gradient-text mb-12 text-center">Student Portal</h2>
+            
+            <div class="grid grid-cols-2 gap-8 mb-12">
+                <div class="feature-card card-hover">
+                    <h3 class="text-2xl font-bold mb-4 gradient-text">📝 Registration & Onboarding</h3>
+                    <ul class="space-y-2 text-gray-700">
+                        <li>✓ Simple registration with required documents</li>
+                        <li>✓ Email/SMS verification</li>
+                        <li>✓ Class Coordinator approval workflow</li>
+                        <li>✓ Profile completion checklist</li>
+                        <li>✓ Automatic subject assignment</li>
+                    </ul>
+                </div>
+                
+                <div class="feature-card card-hover">
+                    <h3 class="text-2xl font-bold mb-4 gradient-text">🔐 Secure Login</h3>
+                    <ul class="space-y-2 text-gray-700">
+                        <li>✓ Multi-factor authentication</li>
+                        <li>✓ Session management</li>
+                        <li>✓ Password recovery</li>
+                        <li>✓ Device management</li>
+                        <li>✓ Activity log tracking</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="bg-gradient-to-r from-purple-50 to-blue-50 rounded-2xl p-8 mb-8">
+                <h3 class="text-3xl font-bold mb-6 gradient-text">🎯 Exam Management System</h3>
+                <div class="mermaid">
+graph LR
+    A[Dashboard] --> B[Upcoming Exams]
+    A --> C[Ongoing Exams]
+    A --> D[Past Results]
+    B --> E[Exam Details]
+    E --> F[Subject/Topic]
+    E --> G[Date & Time]
+    E --> H[Price]
+    E --> I[Syllabus/Motive]
+    H --> J[Payment Gateway]
+    J --> K[Razorpay Integration]
+    K --> L[Enrollment Confirmed]
+    L --> M[Exam Window Opens]
+    M --> N[JEE/NEET Style Interface]
+    N --> O[Timer]
+    N --> P[Mark for Review]
+    N --> Q[Question Navigation]
+    N --> R[Auto-Save Progress]
+    R --> S[Server Storage]
+    O --> T[Auto-Submit on Time]
+    T --> U[Result Processing]
+    U --> V[Immediate/Scheduled]
+    V --> W[Detailed Analytics]
+    
+    style K fill:#3498db,stroke:#333,stroke-width:2px,color:#fff
+    style N fill:#e74c3c,stroke:#333,stroke-width:2px,color:#fff
+    style W fill:#2ecc71,stroke:#333,stroke-width:2px,color:#fff
+                </div>
+            </div>
+
+            <div class="grid grid-cols-3 gap-6 mb-8">
+                <div class="feature-card card-hover ai-glow">
+                    <h4 class="text-xl font-bold mb-3 gradient-text">🎓 Exam Conduction Features</h4>
+                    <ul class="text-sm space-y-2 text-gray-700">
+                        <li>• Professional JEE/NEET interface</li>
+                        <li>• Question-wise timer display</li>
+                        <li>• Mark for review functionality</li>
+                        <li>• Attempted/Not Attempted tracking</li>
+                        <li>• Auto-save after each question</li>
+                        <li>• Offline answer caching</li>
+                        <li>• Auto-submit on timeout</li>
+                        <li>• Summary window before submit</li>
+                        <li>• Question palette navigation</li>
+                        <li>• Full-screen mode enforcement</li>
+                        <li>• Tab-switch detection</li>
+                        <li>• Copy-paste prevention</li>
+                    </ul>
+                </div>
+
+                <div class="feature-card card-hover">
+                    <h4 class="text-xl font-bold mb-3 gradient-text">📊 Result Analytics</h4>
+                    <ul class="text-sm space-y-2 text-gray-700">
+                        <li>• Immediate or scheduled results</li>
+                        <li>• Score breakdown by topics</li>
+                        <li>• Percentile ranking</li>
+                        <li>• Time spent per question</li>
+                        <li>• Accuracy percentage</li>
+                        <li>• Strong vs weak areas</li>
+                        <li>• Comparison with class average</li>
+                        <li>• Performance trends over time</li>
+                        <li>• Subject-wise analysis</li>
+                        <li>• Difficulty-wise breakdown</li>
+                        <li>• Recommended study areas</li>
+                        <li>• Downloadable reports (PDF)</li>
+                    </ul>
+                </div>
+
+                <div class="feature-card card-hover">
+                    <h4 class="text-xl font-bold mb-3 gradient-text">📚 Notes & Resources</h4>
+                    <ul class="text-sm space-y-2 text-gray-700">
+                        <li>• Subject-wise organization</li>
+                        <li>• Professor-uploaded notes</li>
+                        <li>• PDF viewer integration</li>
+                        <li>• Download capability</li>
+                        <li>• Search within notes</li>
+                        <li>• Bookmark important pages</li>
+                        <li>• Recent uploads highlighting</li>
+                        <li>• Topic-wise filtering</li>
+                        <li>• Version history</li>
+                        <li>• Related exams linkage</li>
+                        <li>• Mobile-optimized viewing</li>
+                        <li>• Offline access</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-2xl p-8 ai-glow">
+                <h3 class="text-3xl font-bold mb-6">🤖 AI Features for Students</h3>
+                <div class="grid grid-cols-2 gap-6">
+                    <div>
+                        <h4 class="text-xl font-bold mb-3">💬 AI Study Assistant</h4>
+                        <ul class="space-y-2">
+                            <li>• Voice-enabled chatbot</li>
+                            <li>• "Where did I go wrong?" analysis</li>
+                            <li>• Personalized study recommendations</li>
+                            <li>• Concept clarification</li>
+                            <li>• Practice question suggestions</li>
+                            <li>• Study schedule optimization</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="text-xl font-bold mb-3">📈 Smart Analytics</h4>
+                        <ul class="space-y-2">
+                            <li>• Performance prediction</li>
+                            <li>• Weak area identification</li>
+                            <li>• Learning pattern analysis</li>
+                            <li>• Optimal exam time suggestions</li>
+                            <li>• Peer comparison insights</li>
+                            <li>• Progress milestone tracking</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-8 grid grid-cols-2 gap-6">
+                <div class="feature-card card-hover">
+                    <h4 class="text-xl font-bold mb-3 gradient-text">🔔 Notifications & Reminders</h4>
+                    <ul class="text-sm space-y-2 text-gray-700">
+                        <li>• New exam announcements</li>
+                        <li>• Exam time reminders (1 day, 1 hour before)</li>
+                        <li>• Payment deadline alerts</li>
+                        <li>• Result publication notifications</li>
+                        <li>• New notes upload alerts</li>
+                        <li>• Schedule change updates</li>
+                        <li>• Email + SMS + Push notifications</li>
+                        <li>• Customizable notification preferences</li>
+                    </ul>
+                </div>
+
+                <div class="feature-card card-hover">
+                    <h4 class="text-xl font-bold mb-3 gradient-text">🛡️ Error Handling & Recovery</h4>
+                    <ul class="text-sm space-y-2 text-gray-700">
+                        <li>• Internet disconnection handling</li>
+                        <li>• Answer auto-save on each submit</li>
+                        <li>• Session recovery on reconnection</li>
+                        <li>• Browser crash protection</li>
+                        <li>• Power failure recovery</li>
+                        <li>• Duplicate submission prevention</li>
+                        <li>• Data integrity checks</li>
+                        <li>• Backup to local storage</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Professor Portal -->
+    <section id="professor" class="section bg-gray-50">
+        <div class="max-w-7xl mx-auto">
+            <div class="role-icon">👨‍🏫</div>
+            <h2 class="text-5xl font-bold gradient-text mb-12 text-center">Professor Portal</h2>
+            
+            <div class="bg-white rounded-2xl p-8 mb-8 shadow-lg">
+                <h3 class="text-3xl font-bold mb-6 gradient-text">📋 Exam Creation Workflow</h3>
+                <div class="mermaid">
+graph LR
+    A[Create New Exam] --> B[Method Selection]
+    B --> C[Manual Entry]
+    B --> D[Excel Upload]
+    D --> E[Template Download]
+    D --> F[Upload .xlsx/.csv]
+    F --> G[Auto Validation]
+    G --> H[Question Preview]
+    C --> H
+    H --> I[Edit Interface]
+    I --> J[Add Images]
+    I --> K[Set Marks]
+    I --> L[Difficulty Level]
+    I --> M[Topic Tags]
+    J --> N[Configure Settings]
+    K --> N
+    L --> N
+    M --> N
+    N --> O[Price Setting]
+    N --> P[Date & Time]
+    N --> Q[Duration]
+    N --> R[Result Display Mode]
+    O --> S[Publish Exam]
+    P --> S
+    Q --> S
+    R --> S
+    S --> T[Student Notifications]
+    
+    style D fill:#3498db,stroke:#333,stroke-width:2px,color:#fff
+    style I fill:#e74c3c,stroke:#333,stroke-width:2px,color:#fff
+    style S fill:#2ecc71,stroke:#333,stroke-width:2px,color:#fff
+                </div>
+            </div>
+
+            <div class="grid grid-cols-3 gap-6 mb-8">
+                <div class="feature-card card-hover">
+                    <h4 class="text-xl font-bold mb-3 gradient-text">📝 Test Creation Features</h4>
+                    <ul class="text-sm space-y-2 text-gray-700">
+                        <li>• Excel/CSV bulk upload</li>
+                        <li>• Template with validation</li>
+                        <li>• Drag-and-drop question builder</li>
+                        <li>• Multiple question types (MCQ, Numerical, Multi-select)</li>
+                        <li>• Image/Diagram upload per question</li>
+                        <li>• LaTeX formula support</li>
+                        <li>• Question randomization</li>
+                        <li>• Question bank management</li>
+                        <li>• Import from previous exams</li>
+                        <li>• Negative marking settings</li>
+                        <li>• Section-wise tests</li>
+                        <li>• Preview before publish</li>
+                    </ul>
+                </div>
+
+                <div class="feature-card card-hover">
+                    <h4 class="text-xl font-bold mb-3 gradient-text">⚙️ Exam Configuration</h4>
+                    <ul class="text-sm space-y-2 text-gray-700">
+                        <li>• Custom pricing (₹0 to ₹10000)</li>
+                        <li>• Scheduled/Immediate publish</li>
+                        <li>• Date & time picker</li>
+                        <li>• Duration setting</li>
+                        <li>• Grace period configuration</li>
+                        <li>• Result display options:</li>
+                        <li>&nbsp;&nbsp;- Immediate after submit</li>
+                        <li>&nbsp;&nbsp;- Scheduled date/time</li>
+                        <li>&nbsp;&nbsp;- Manual release</li>
+                        <li>• Attempt limits</li>
+                        <li>• Late submission penalty</li>
+                        <li>• Passing criteria settings</li>
+                    </ul>
+                </div>
+
+                <div class="feature-card card-hover">
+                    <h4 class="text-xl font-bold mb-3 gradient-text">✏️ Edit & Update</h4>
+                    <ul class="text-sm space-y-2 text-gray-700">
+                        <li>• Edit published exams</li>
+                        <li>• Update individual questions</li>
+                        <li>• Change exam timings</li>
+                        <li>• Extend deadlines</li>
+                        <li>• Add/remove questions</li>
+                        <li>• Update pricing</li>
+                        <li>• Modify instructions</li>
+                        <li>• Version control tracking</li>
+                        <li>• Student notification on changes</li>
+                        <li>• Rollback to previous versions</li>
+                        <li>• Duplicate exam creation</li>
+                        <li>• Archive old exams</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-2 gap-8 mb-8">
+                <div class="feature-card card-hover">
+                    <h3 class="text-2xl font-bold mb-4 gradient-text">📚 Notes Management</h3>
+                    <ul class="space-y-2 text-gray-700">
+                        <li>✓ Upload multiple file formats (PDF, PPT, DOC)</li>
+                        <li>✓ Rich text description editor</li>
+                        <li>✓ Subject and topic categorization</li>
+                        <li>✓ Thumbnail preview generation</li>
+                        <li>✓ Version management</li>
+                        <li>✓ Access analytics (views, downloads)</li>
+                        <li>✓ Schedule publishing</li>
+                        <li>✓ Student download tracking</li>
+                        <li>✓ File size optimization</li>
+                        <li>✓ Bulk upload capability</li>
+                    </ul>
+                </div>
+
+                <div class="feature-card card-hover">
+                    <h3 class="text-2xl font-bold mb-4 gradient-text">💰 Financial Dashboard</h3>
+                    <ul class="space-y-2 text-gray-700">
+                        <li>✓ Total earnings overview</li>
+                        <li>✓ Exam-wise revenue breakdown</li>
+                        <li>✓ Payment gateway integration</li>
+                        <li>✓ Transaction history</li>
+                        <li>✓ Refund management</li>
+                        <li>✓ Monthly/yearly reports</li>
+                        <li>✓ Student payment status</li>
+                        <li>✓ Pending payments tracking</li>
+                        <li>✓ Revenue forecasting</li>
+                        <li>✓ Export financial data</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="bg-gradient-to-r from-purple-50 to-blue-50 rounded-2xl p-8 mb-8">
+                <h3 class="text-3xl font-bold mb-6 gradient-text">📊 Advanced Analytics Dashboard</h3>
+                <div class="grid grid-cols-2 gap-6">
+                    <div class="bg-white p-6 rounded-xl">
+                        <h4 class="text-xl font-bold mb-3">Overall Performance Metrics</h4>
+                        <ul class="text-sm space-y-2 text-gray-700">
+                            <li>• Class average scores with trends</li>
+                            <li>• Enrollment vs completion rate</li>
+                            <li>• Time-wise performance graph</li>
+                            <li>• Subject-wise analytics</li>
+                            <li>• Difficulty vs success rate</li>
+                            <li>• Student engagement metrics</li>
+                            <li>• Payment conversion rates</li>
+                            <li>• Peak exam participation hours</li>
+                        </ul>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl">
+                        <h4 class="text-xl font-bold mb-3">Individual Student Tracking</h4>
+                        <ul class="text-sm space-y-2 text-gray-700">
+                            <li>• Complete student profile</li>
+                            <li>• All exams attempted history</li>
+                            <li>• Progress trajectory visualization</li>
+                            <li>• Attendance in paid exams</li>
+                            <li>• Payment history</li>
+                            <li>• Strong/weak topics identification</li>
+                            <li>• Comparison with peers</li>
+                            <li>• Predicted performance trends</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-gradient-to-r from-indigo-500 to-purple-600 text-white rounded-2xl p-8 ai-glow">
+                <h3 class="text-3xl font-bold mb-6">🤖 AI Features for Professors</h3>
+                <div class="grid grid-cols-3 gap-6">
+                    <div>
+                        <h4 class="text-xl font-bold mb-3">💬 Voice-Enabled AI Assistant</h4>
+                        <ul class="space-y-2 text-sm">
+                            <li>• "Show me last exam results"</li>
+                            <li>• "Which student is struggling?"</li>
+                            <li>• "What's my total earnings?"</li>
+                            <li>• "Show enrollment trends"</li>
+                            <li>• "Which questions were hardest?"</li>
+                            <li>• Natural language queries</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="text-xl font-bold mb-3">📈 Intelligent Insights</h4>
+                        <ul class="space-y-2 text-sm">
+                            <li>• Question difficulty prediction</li>
+                            <li>• Student failure patterns</li>
+                            <li>• Optimal exam timing suggestions</li>
+                            <li>• Pricing optimization</li>
+                            <li>• Content gap identification</li>
+                            <li>• Automated feedback generation</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="text-xl font-bold mb-3">🎯 Smart Recommendations</h4>
+                        <ul class="space-y-2 text-sm">
+                            <li>• Students needing attention</li>
+                            <li>• Topics to re-teach</li>
+                            <li>• Similar question suggestions</li>
+                            <li>• Best exam scheduling times</li>
+                            <li>• Revenue optimization tips</li>
+                            <li>• Content improvement areas</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-8 grid grid-cols-2 gap-6">
+                <div class="feature-card card-hover">
+                    <h4 class="text-xl font-bold mb-3 gradient-text">📧 Communication Tools</h4>
+                    <ul class="text-sm space-y-2 text-gray-700">
+                        <li>• Bulk student messaging</li>
+                        <li>• Announcement broadcasting</li>
+                        <li>• Individual student chat</li>
+                        <li>• Email templates</li>
+                        <li>• Reminder scheduling</li>
+                        <li>• Feedback collection forms</li>
+                        <li>• Student query management</li>
+                        <li>• Auto-responses for FAQs</li>
+                    </ul>
+                </div>
+
+                <div class="feature-card card-hover">
+                    <h4 class="text-xl font-bold mb-3 gradient-text">🔍 Advanced Filters</h4>
+                    <ul class="text-sm space-y-2 text-gray-700">
+                        <li>• Filter by exam type</li>
+                        <li>• Date range selection</li>
+                        <li>• Performance brackets</li>
+                        <li>• Payment status</li>
+                        <li>• Subject/topic wise</li>
+                        <li>• Student cohorts</li>
+                        <li>• Custom filter combinations</li>
+                        <li>• Save filter presets</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Class Coordinator Portal -->
+    <section id="coordinator" class="section bg-white">
+        <div class="max-w-7xl mx-auto">
+            <div class="role-icon">👔</div>
+            <h2 class="text-5xl font-bold gradient-text mb-12 text-center">Class Coordinator Portal</h2>
+            
+            <div class="bg-gradient-to-r from-purple-50 to-blue-50 rounded-2xl p-8 mb-8">
+                <h3 class="text-3xl font-bold mb-6 gradient-text">🎯 Core Responsibilities</h3>
+                <div class="grid grid-cols-3 gap-6">
+                    <div class="bg-white p-6 rounded-xl">
+                        <div class="text-3xl mb-3">👥</div>
+                        <h4 class="font-bold text-lg mb-2">Student Management</h4>
+                        <p class="text-gray-600 text-sm">Approve registrations, manage class rosters, and monitor student progress</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl">
+                        <div class="text-3xl mb-3">🔗</div>
+                        <h4 class="font-bold text-lg mb-2">Professor Assignment</h4>
+                        <p class="text-gray-600 text-sm">Link professors to subjects and manage teaching schedules</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl">
+                        <div class="text-3xl mb-3">📊</div>
+                        <h4 class="font-bold text-lg mb-2">Class Analytics</h4>
+                        <p class="text-gray-600 text-sm">Comprehensive insights into class performance and engagement</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-2 gap-8 mb-8">
+                <div class="feature-card card-hover">
+                    <h3 class="text-2xl font-bold mb-4 gradient-text">🔐 Registration & Access</h3>
+                    <ul class="space-y-2 text-gray-700">
+                        <li>✓ HOD-approved registration</li>
+                        <li>✓ Class-specific dashboard access</li>
+                        <li>✓ Multi-class management capability</li>
+                        <li>✓ Role-based permissions</li>
+                        <li>✓ Secure credential management</li>
+                        <li>✓ Activity log tracking</li>
+                    </ul>
+                </div>
+
+                <div class="feature-card card-hover">
+                    <h3 class="text-2xl font-bold mb-4 gradient-text">👨‍🎓 Student Administration</h3>
+                    <ul class="space-y-2 text-gray-700">
+                        <li>✓ Review pending registrations</li>
+                        <li>✓ Approve/Reject with comments</li>
+                        <li>✓ Student profile management</li>
+                        <li>✓ Batch upload students</li>
+                        <li>✓ Transfer students between sections</li>
+                        <li>✓ Student status tracking (Active/Inactive)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-2xl p-8 shadow-lg mb-8">
+                <h3 class="text-3xl font-bold mb-6 gradient-text">📊 Class Performance Dashboard</h3>
+                <div class="grid grid-cols-3 gap-6">
+                    <div class="feature-card">
+                        <h4 class="text-xl font-bold mb-3">Exam Analytics</h4>
+                        <ul class="text-sm space-y-2 text-gray-700">
+                            <li>• Class average by exam</li>
+                            <li>• Subject-wise performance</li>
+                            <li>• Exam participation rates</li>
+                            <li>• Pass/fail distribution</li>
+                            <li>• Trend analysis over time</li>
+                            <li>• Comparison with other classes</li>
+                            <li>• Topper lists</li>
+                            <li>• At-risk students identification</li>
+                        </ul>
+                    </div>
+                    <div class="feature-card">
+                        <h4 class="text-xl font-bold mb-3">Attendance Tracking</h4>
+                        <ul class="text-sm space-y-2 text-gray-700">
+                            <li>• Daily attendance marking</li>
+                            <li>• Exam attendance tracking</li>
+                            <li>• Monthly attendance reports</li>
+                            <li>• Low attendance alerts</li>
+                            <li>• Attendance vs performance correlation</li>
+                            <li>• Leave management</li>
+                            <li>• Parent notification for absences</li>
+                            <li>• Export attendance sheets</li>
+                        </ul>
+                    </div>
+                    <div class="feature-card">
+                        <h4 class="text-xl font-bold mb-3">Professor-Student Linkage</h4>
+                        <ul class="text-sm space-y-2 text-gray-700">
+                            <li>• Assign professors to subjects</li>
+                            <li>• Manage teaching schedules</li>
+                            <li>• Professor workload balancing</li>
+                            <li>• Substitute teacher assignment</li>
+                            <li>• Professor performance metrics</li>
+                            <li>• Student feedback on teaching</li>
+                            <li>• Communication facilitation</li>
+                            <li>• Resource allocation</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-gradient-to-r from-green-500 to-teal-600 text-white rounded-2xl p-8 ai-glow">
+                <h3 class="text-3xl font-bold mb-6">🤖 AI Features for Class Coordinators</h3>
+                <div class="grid grid-cols-2 gap-6">
+                    <div>
+                        <h4 class="text-xl font-bold mb-3">📈 Smart Class Insights</h4>
+                        <ul class="space-y-2">
+                            <li>• "Where is the class spending most time?"</li>
+                            <li>• "Which students need intervention?"</li>
+                            <li>• "What's the overall class trend?"</li>
+                            <li>• Engagement pattern analysis</li>
+                            <li>• Dropout risk prediction</li>
+                            <li>• Optimal class scheduling suggestions</li>
+                            <li>• Resource allocation recommendations</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="text-xl font-bold mb-3">🎯 Proactive Recommendations</h4>
+                        <ul class="space-y-2">
+                            <li>• Students needing attention</li>
+                            <li>• Best performers for awards</li>
+                            <li>• Subjects requiring extra focus</li>
+                            <li>• Professor effectiveness insights</li>
+                            <li>• Class improvement strategies</li>
+                            <li>• Peer learning group suggestions</li>
+                            <li>• Parent communication triggers</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-8 grid grid-cols-2 gap-6">
+                <div class="feature-card card-hover">
+                    <h4 class="text-xl font-bold mb-3 gradient-text">📱 Communication Hub</h4>
+                    <ul class="text-sm space-y-2 text-gray-700">
+                        <li>• Class-wide announcements</li>
+                        <li>• Parent communication portal</li>
+                        <li>• Professor coordination</li>
+                        <li>• Student grievance handling</li>
+                        <li>• Event management</li>
+                        <li>• Notice board system</li>
+                        <li>• Emergency alerts</li>
+                        <li>• Feedback collection</li>
+                    </ul>
+                </div>
+
+                <div class="feature-card card-hover">
+                    <h4 class="text-xl font-bold mb-3 gradient-text">📋 Reporting Tools</h4>
+                    <ul class="text-sm space-y-2 text-gray-700">
+                        <li>• Monthly progress reports</li>
+                        <li>• Attendance summaries</li>
+                        <li>• Performance comparison charts</li>
+                        <li>• Custom report generation</li>
+                        <li>• Export to PDF/Excel</li>
+                        <li>• Scheduled report delivery</li>
+                        <li>• Visual dashboards</li>
+                        <li>• Historical data access</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- HOD Portal -->
+    <section id="hod" class="section bg-gray-50">
+        <div class="max-w-7xl mx-auto">
+            <div class="role-icon">🎓</div>
+            <h2 class="text-5xl font-bold gradient-text mb-12 text-center">HOD (Head of Department) Portal</h2>
+            
+            <div class="bg-white rounded-2xl p-8 mb-8 shadow-lg">
+                <h3 class="text-3xl font-bold mb-6 gradient-text">🎯 Strategic Department Management</h3>
+                <div class="mermaid">
+graph TB
+    A[HOD Dashboard] --> B[Approvals]
+    A --> C[Analytics]
+    A --> D[Resource Management]
+    A --> E[Parent Interface]
+    
+    B --> F[Class Coordinators]
+    B --> G[Professors - Optional]
+    
+    C --> H[All Students]
+    C --> I[All Professors]
+    C --> J[All Exams]
+    C --> K[Department Performance]
+    
+    D --> L[Faculty Assignment]
+    D --> M[Budget Allocation]
+    
+    E --> N[Quick Student Search]
+    E --> O[Result Showcase]
+    E --> P[Progress Charts]
+    E --> Q[Improvement Analytics]
+    
+    style A fill:#667eea,stroke:#333,stroke-width:3px,color:#fff
+    style E fill:#e74c3c,stroke:#333,stroke-width:2px,color:#fff
+    style C fill:#2ecc71,stroke:#333,stroke-width:2px,color:#fff
+                </div>
+            </div>
+
+            <div class="grid grid-cols-3 gap-6 mb-8">
+                <div class="feature-card card-hover">
+                    <h4 class="text-xl font-bold mb-3 gradient-text">✅ Approval Management</h4>
+                    <ul class="text-sm space-y-2 text-gray-700">
+                        <li>• <strong>Class Coordinator Approval:</strong></li>
+                        <li>&nbsp;&nbsp;- Review applications</li>
+                        <li>&nbsp;&nbsp;- Verify credentials</li>
+                        <li>&nbsp;&nbsp;- Assign classes</li>
+                        <li>&nbsp;&nbsp;- Set permissions</li>
+                        <li>• <strong>Professor Approval (Optional):</strong></li>
+                        <li>&nbsp;&nbsp;- Department-level approval</li>
+                        <li>&nbsp;&nbsp;- Subject assignment</li>
+                        <li>&nbsp;&nbsp;- Workload distribution</li>
+                        <li>• Bulk approval workflows</li>
+                        <li>• Rejection with feedback</li>
+                        <li>• Approval history tracking</li>
+                    </ul>
+                </div>
+
+                <div class="feature-card card-hover">
+                    <h4 class="text-xl font-bold mb-3 gradient-text">📊 Department Analytics</h4>
+                    <ul class="text-sm space-y-2 text-gray-700">
+                        <li>• <strong>Student Insights:</strong></li>
+                        <li>&nbsp;&nbsp;- All student profiles</li>
+                        <li>&nbsp;&nbsp;- Department-wide results</li>
+                        <li>&nbsp;&nbsp;- Year-wise comparison</li>
+                        <li>&nbsp;&nbsp;- Placement readiness</li>
+                        <li>• <strong>Professor Analytics:</strong></li>
+                        <li>&nbsp;&nbsp;- Teaching effectiveness</li>
+                        <li>&nbsp;&nbsp;- Student feedback scores</li>
+                        <li>&nbsp;&nbsp;- Exam creation activity</li>
+                        <li>&nbsp;&nbsp;- Revenue contribution</li>
+                        <li>• Department performance trends</li>
+                        <li>• Cross-subject analysis</li>
+                    </ul>
+                </div>
+
+                <div class="feature-card card-hover">
+                    <h4 class="text-xl font-bold mb-3 gradient-text">👥 Resource Management</h4>
+                    <ul class="text-sm space-y-2 text-gray-700">
+                        <li>• Faculty workload balancing</li>
+                        <li>• Subject-professor mapping</li>
+                        <li>• Class size optimization</li>
+                        <li>• Lab/resource scheduling</li>
+                        <li>• Budget allocation</li>
+                        <li>• Infrastructure planning</li>
+                        <li>• Recruitment needs analysis</li>
+                        <li>• Performance-based incentives</li>
+                        <li>• Professional development tracking</li>
+                        <li>• Compliance monitoring</li>
+                        <li>• Quality assurance metrics</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="bg-gradient-to-r from-orange-50 to-red-50 rounded-2xl p-8 mb-8">
+                <h3 class="text-3xl font-bold mb-6 gradient-text">👪 Parent Meeting Interface - Time Saver!</h3>
+                <p class="text-gray-700 mb-6 text-lg">Revolutionary feature that reduces parent meeting time from 30 minutes to 5 minutes!</p>
+                
+                <div class="grid grid-cols-2 gap-6">
+                    <div class="bg-white p-6 rounded-xl">
+                        <h4 class="text-xl font-bold mb-3 gradient-text">🔍 Quick Student Search</h4>
+                        <ul class="text-sm space-y-2 text-gray-700">
+                            <li>• Search by name, roll number, or ID</li>
+                            <li>• Instant profile loading</li>
+                            <li>• Recent activity summary</li>
+                            <li>• One-click result access</li>
+                            <li>• QR code-based quick access</li>
+                            <li>• Parent-specific view mode</li>
+                        </ul>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl">
+                        <h4 class="text-xl font-bold mb-3 gradient-text">📈 Comprehensive Result Showcase</h4>
+                        <ul class="text-sm space-y-2 text-gray-700">
+                            <li>• All exam results in timeline view</li>
+                            <li>• Subject-wise performance charts</li>
+                            <li>• Comparison with class average</li>
+                            <li>• Attendance correlation</li>
+                            <li>• Strengths and weaknesses</li>
+                            <li>• Improvement trajectory graphs</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="mt-6 bg-white p-6 rounded-xl">
+                    <h4 class="text-xl font-bold mb-3 gradient-text">📊 Professional Charts & Visuals</h4>
+                    <div class="grid grid-cols-3 gap-4 text-sm text-gray-700">
+                        <div>
+                            <strong>Performance Charts:</strong>
+                            <ul class="mt-2 space-y-1">
+                                <li>• Line graphs for trends</li>
+                                <li>• Bar charts for comparison</li>
+                                <li>• Pie charts for distribution</li>
+                                <li>• Heat maps for topics</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <strong>Improvement Metrics:</strong>
+                            <ul class="mt-2 space-y-1">
+                                <li>• Month-over-month growth</li>
+                                <li>• Percentile improvement</li>
+                                <li>• Skill development tracking</li>
+                                <li>• Goal achievement status</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <strong>Predictive Insights:</strong>
+                            <ul class="mt-2 space-y-1">
+                                <li>• Expected semester results</li>
+                                <li>• Areas needing attention</li>
+                                <li>• Recommended actions</li>
+                                <li>• Success probability</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-gradient-to-r from-blue-500 to-indigo-600 text-white rounded-2xl p-8 ai-glow">
+                <h3 class="text-3xl font-bold mb-6">🤖 AI Features for HOD</h3>
+                <div class="grid grid-cols-3 gap-6">
+                    <div>
+                        <h4 class="text-xl font-bold mb-3">💬 Department-wide AI Assistant</h4>
+                        <ul class="space-y-2 text-sm">
+                            <li>• "Show department performance summary"</li>
+                            <li>• "Which professors are excelling?"</li>
+                            <li>• "Identify struggling students"</li>
+                            <li>• "Compare year-over-year results"</li>
+                            <li>• "Recommend resource allocation"</li>
+                            <li>• Voice and text queries</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="text-xl font-bold mb-3">📊 Strategic Analytics</h4>
+                        <ul class="space-y-2 text-sm">
+                            <li>• Department benchmarking</li>
+                            <li>• Faculty effectiveness scoring</li>
+                            <li>• Student success prediction</li>
+                            <li>• Resource optimization</li>
+                            <li>• Curriculum effectiveness</li>
+                            <li>• Industry alignment analysis</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="text-xl font-bold mb-3">🎯 Parent Convincing AI</h4>
+                        <ul class="space-y-2 text-sm">
+                            <li>• Auto-generate progress reports</li>
+                            <li>• Highlight improvement areas</li>
+                            <li>• Comparison with benchmarks</li>
+                            <li>• Success story identification</li>
+                            <li>• Talking points generation</li>
+                            <li>• Data-driven reassurance</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-8 grid grid-cols-2 gap-6">
+                <div class="feature-card card-hover">
+                    <h4 class="text-xl font-bold mb-3 gradient-text">📋 Administrative Tools</h4>
+                    <ul class="text-sm space-y-2 text-gray-700">
+                        <li>• Department calendar management</li>
+                        <li>• Faculty meeting scheduler</li>
+                        <li>• Policy implementation tracking</li>
+                        <li>• Compliance documentation</li>
+                        <li>• Accreditation support</li>
+                        <li>• Budget monitoring</li>
+                        <li>• Inventory management</li>
+                        <li>• External stakeholder communication</li>
+                    </ul>
+                </div>
+
+                <div class="feature-card card-hover">
+                    <h4 class="text-xl font-bold mb-3 gradient-text">🎯 Strategic Planning</h4>
+                    <ul class="text-sm space-y-2 text-gray-700">
+                        <li>• Long-term goal setting</li>
+                        <li>• KPI tracking and monitoring</li>
+                        <li>• Industry collaboration tracking</li>
+                        <li>• Research output monitoring</li>
+                        <li>• Placement statistics</li>
+                        <li>• Alumni engagement metrics</li>
+                        <li>• Competitive analysis</li>
+                        <li>• Growth forecasting</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Principal Portal -->
+    <section id="principal" class="section bg-white">
+        <div class="max-w-7xl mx-auto">
+            <div class="role-icon">👨‍💼</div>
+            <h2 class="text-5xl font-bold gradient-text mb-12 text-center">Principal Portal - The Command Center</h2>
+            
+            <div class="bg-gradient-to-r from-purple-100 to-blue-100 rounded-2xl p-8 mb-8">
+                <h3 class="text-3xl font-bold mb-6 gradient-text">🏛️ Institution-Wide Oversight</h3>
+                <div class="grid grid-cols-4 gap-6">
+                    <div class="text-center">
+                        <div class="text-5xl mb-3">✅</div>
+                        <h4 class="font-bold">Approvals</h4>
+                        <p class="text-sm text-gray-600">HODs & Professors</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-5xl mb-3">📊</div>
+                        <h4 class="font-bold">Analytics</h4>
+                        <p class="text-sm text-gray-600">College-wide insights</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-5xl mb-3">🎯</div>
+                        <h4 class="font-bold">Strategy</h4>
+                        <p class="text-sm text-gray-600">Vision & planning</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-5xl mb-3">🤖</div>
+                        <h4 class="font-bold">AI Insights</h4>
+                        <p class="text-sm text-gray-600">Predictive analytics</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-3 gap-6 mb-8">
+                <div class="feature-card card-hover">
+                    <h4 class="text-xl font-bold mb-3 gradient-text">✅ Approval System</h4>
+                    <ul class="text-sm space-y-2 text-gray-700">
+                        <li>• <strong>HOD Approvals:</strong></li>
+                        <li>&nbsp;&nbsp;- Department heads</li>
+                        <li>&nbsp;&nbsp;- Qualification verification</li>
+                        <li>&nbsp;&nbsp;- Department assignment</li>
+                        <li>&nbsp;&nbsp;- Authority delegation</li>
+                        <li>• <strong>Professor Approvals:</strong></li>
+                        <li>&nbsp;&nbsp;- Final authority</li>
+                        <li>&nbsp;&nbsp;- Cross-department faculty</li>
+                        <li>&nbsp;&nbsp;- Visiting faculty</li>
+                        <li>&nbsp;&nbsp;- Workload approval</li>
+                        <li>• Batch approval workflows</li>
+                        <li>• Conditional approvals</li>
+                        <li>• Audit trail for all approvals</li>
+                    </ul>
+                </div>
+
+                <div class="feature-card card-hover">
+                    <h4 class="text-xl font-bold mb-3 gradient-text">🏫 College-Wide Analytics</h4>
+                    <ul class="text-sm space-y-2 text-gray-700">
+                        <li>• <strong>Performance Metrics:</strong></li>
+                        <li>&nbsp;&nbsp;- All departments comparison</li>
+                        <li>&nbsp;&nbsp;- Year-wise trends</li>
+                        <li>&nbsp;&nbsp;- Success rate tracking</li>
+                        <li>&nbsp;&nbsp;- Dropout analysis</li>
+                        <li>• <strong>Financial Overview:</strong></li>
+                        <li>&nbsp;&nbsp;- Total revenue from exams</li>
+                        <li>&nbsp;&nbsp;- Department-wise earnings</li>
+                        <li>&nbsp;&nbsp;- Professor earnings</li>
+                        <li>&nbsp;&nbsp;- Enrollment trends</li>
+                        <li>• <strong>Quality Metrics:</strong></li>
+                        <li>&nbsp;&nbsp;- Teaching effectiveness</li>
+                        <li>&nbsp;&nbsp;- Student satisfaction</li>
+                        <li>&nbsp;&nbsp;- Accreditation scores</li>
+                    </ul>
+                </div>
+
+                <div class="feature-card card-hover">
+                    <h4 class="text-xl font-bold mb-3 gradient-text">👥 Human Resource Management</h4>
+                    <ul class="text-sm space-y-2 text-gray-700">
+                        <li>• Total faculty overview</li>
+                        <li>• Department-wise distribution</li>
+                        <li>• Workload analysis</li>
+                        <li>• Performance evaluation</li>
+                        <li>• Training needs assessment</li>
+                        <li>• Succession planning</li>
+                        <li>• Faculty retention metrics</li>
+                        <li>• Recruitment pipeline</li>
+                        <li>• Salary and incentive tracking</li>
+                        <li>• Leave management</li>
+                        <li>• Professional development</li>
+                        <li>• Faculty recognition programs</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-2xl p-8 shadow-lg mb-8">
+                <h3 class="text-3xl font-bold mb-6 gradient-text">🎯 Strategic Decision Making Features</h3>
+                <div class="grid grid-cols-2 gap-8">
+                    <div>
+                        <h4 class="text-2xl font-bold mb-4">📈 Executive Dashboard</h4>
+                        <div class="space-y-3">
+                            <div class="bg-gray-50 p-4 rounded-lg">
+                                <strong>Academic Performance:</strong>
+                                <ul class="text-sm mt-2 space-y-1 text-gray-700">
+                                    <li>• Overall pass percentage</li>
+                                    <li>• Department ranking</li>
+                                    <li>• Subject-wise analysis</li>
+                                    <li>• Semester-wise trends</li>
+                                    <li>• Placement correlation</li>
+                                </ul>
+                            </div>
+                            <div class="bg-gray-50 p-4 rounded-lg">
+                                <strong>Financial Health:</strong>
+                                <ul class="text-sm mt-2 space-y-1 text-gray-700">
+                                    <li>• Revenue streams analysis</li>
+                                    <li>• Expense tracking</li>
+                                    <li>• ROI on initiatives</li>
+                                    <li>• Budget vs actual</li>
+                                    <li>• Forecasting models</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <h4 class="text-2xl font-bold mb-4">🔍 Compliance & Quality</h4>
+                        <div class="space-y-3">
+                            <div class="bg-gray-50 p-4 rounded-lg">
+                                <strong>Regulatory Compliance:</strong>
+                                <ul class="text-sm mt-2 space-y-1 text-gray-700">
+                                    <li>• Accreditation tracking</li>
+                                    <li>• Policy adherence monitoring</li>
+                                    <li>• Audit readiness</li>
+                                    <li>• Documentation management</li>
+                                    <li>• Compliance reporting</li>
+                                </ul>
+                            </div>
+                            <div class="bg-gray-50 p-4 rounded-lg">
+                                <strong>Quality Assurance:</strong>
+                                <ul class="text-sm mt-2 space-y-1 text-gray-700">
+                                    <li>• Teaching quality metrics</li>
+                                    <li>• Infrastructure utilization</li>
+                                    <li>• Student feedback analysis</li>
+                                    <li>• Continuous improvement tracking</li>
+                                    <li>• Benchmark comparisons</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-gradient-to-r from-purple-50 to-pink-50 rounded-2xl p-8 mb-8">
+                <h3 class="text-3xl font-bold mb-6 gradient-text">🌟 Stakeholder Management</h3>
+                <div class="grid grid-cols-3 gap-6">
+                    <div class="bg-white p-6 rounded-xl">
+                        <h4 class="font-bold text-lg mb-3">👪 Parent Relations</h4>
+                        <ul class="text-sm space-y-2 text-gray-700">
+                            <li>• College-wide progress reports</li>
+                            <li>• Parent meeting scheduler</li>
+                            <li>• Grievance redressal system</li>
+                            <li>• Parent feedback portal</li>
+                            <li>• Communication templates</li>
+                            <li>• Event management</li>
+                        </ul>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl">
+                        <h4 class="font-bold text-lg mb-3">🤝 Industry Partnerships</h4>
+                        <ul class="text-sm space-y-2 text-gray-700">
+                            <li>• Collaboration tracking</li>
+                            <li>• Placement coordination</li>
+                            <li>• Internship management</li>
+                            <li>• Guest lecture scheduling</li>
+                            <li>• MOU monitoring</li>
+                            <li>• Industry feedback integration</li>
+                        </ul>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl">
+                        <h4 class="font-bold text-lg mb-3">🎓 Alumni Network</h4>
+                        <ul class="text-sm space-y-2 text-gray-700">
+                            <li>• Alumni database</li>
+                            <li>• Success story tracking</li>
+                            <li>• Mentorship programs</li>
+                            <li>• Fundraising campaigns</li>
+                            <li>• Event coordination</li>
+                            <li>• Engagement metrics</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-gradient-to-r from-indigo-600 to-purple-700 text-white rounded-2xl p-8 ai-glow">
+                <h3 class="text-3xl font-bold mb-6">🤖 AI Features for Principal - The Game Changer</h3>
+                <div class="grid grid-cols-2 gap-8">
+                    <div>
+                        <h4 class="text-2xl font-bold mb-4">💬 Executive AI Assistant</h4>
+                        <div class="space-y-3">
+                            <div class="bg-white bg-opacity-10 p-4 rounded-lg">
+                                <strong>Voice & Text Queries:</strong>
+                                <ul class="mt-2 space-y-1 text-sm">
+                                    <li>• "Compare department performances"</li>
+                                    <li>• "Show college-wide trends"</li>
+                                    <li>• "Identify top performers"</li>
+                                    <li>• "Revenue forecast for next quarter"</li>
+                                    <li>• "What needs immediate attention?"</li>
+                                    <li>• "Benchmark against peer institutions"</li>
+                                </ul>
+                            </div>
+                            <div class="bg-white bg-opacity-10 p-4 rounded-lg">
+                                <strong>Strategic Insights:</strong>
+                                <ul class="mt-2 space-y-1 text-sm">
+                                    <li>• Growth opportunity identification</li>
+                                    <li>• Risk assessment and mitigation</li>
+                                    <li>• Resource optimization recommendations</li>
+                                    <li>• Competitive positioning analysis</li>
+                                    <li>• Innovation suggestions</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <h4 class="text-2xl font-bold mb-4">🎯 Predictive Analytics</h4>
+                        <div class="space-y-3">
+                            <div class="bg-white bg-opacity-10 p-4 rounded-lg">
+                                <strong>Future Forecasting:</strong>
+                                <ul class="mt-2 space-y-1 text-sm">
+                                    <li>• Enrollment projections</li>
+                                    <li>• Revenue predictions</li>
+                                    <li>• Student success rates</li>
+                                    <li>• Faculty requirement planning</li>
+                                    <li>• Infrastructure needs</li>
+                                    <li>• Market trend analysis</li>
+                                </ul>
+                            </div>
+                            <div class="bg-white bg-opacity-10 p-4 rounded-lg">
+                                <strong>Decision Support:</strong>
+                                <ul class="mt-2 space-y-1 text-sm">
+                                    <li>• Policy impact simulation</li>
+                                    <li>• Investment prioritization</li>
+                                    <li>• Crisis management suggestions</li>
+                                    <li>• Expansion feasibility analysis</li>
+                                    <li>• Accreditation readiness</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-2 gap-6">
+                <div class="feature-card card-hover">
+                    <h4 class="text-xl font-bold mb-3 gradient-text">📱 Communication Central</h4>
+                    <ul class="text-sm space-y-2 text-gray-700">
+                        <li>• College-wide announcements</li>
+                        <li>• Department-specific messaging</li>
+                        <li>• Crisis communication protocols</li>
+                        <li>• Media relations management</li>
+                        <li>• Internal newsletter</li>
+                        <li>• Social media oversight</li>
+                        <li>• Stakeholder updates</li>
+                        <li>• Emergency alert system</li>
+                    </ul>
+                </div>
+
+                <div class="feature-card card-hover">
+                    <h4 class="text-xl font-bold mb-3 gradient-text">🎯 Goal Tracking</h4>
+                    <ul class="text-sm space-y-2 text-gray-700">
+                        <li>• Vision and mission alignment</li>
+                        <li>• Strategic objectives monitoring</li>
+                        <li>• KPI dashboard</li>
+                        <li>• Department goal tracking</li>
+                        <li>• Milestone celebrations</li>
+                        <li>• Performance reviews</li>
+                        <li>• Annual planning</li>
+                        <li>• Progress reports to board</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- System Architecture -->
+    <section id="architecture" class="section bg-gray-50">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-5xl font-bold gradient-text mb-12 text-center">System Architecture & Technical Stack</h2>
+            
+            <div class="bg-white rounded-2xl p-8 shadow-lg mb-8">
+                <h3 class="text-3xl font-bold mb-6 gradient-text">🏗️ High-Level Architecture</h3>
+                <div class="mermaid">
+graph TB
+    subgraph Frontend["Frontend Layer"]
+        A[React/Next.js Web App]
+        B[Mobile App - React Native]
+        C[PWA Support]
+    end
+    
+    subgraph API["API Gateway"]
+        D[REST API]
+        E[GraphQL]
+        F[WebSocket for Real-time]
+    end
+    
+    subgraph Auth["Authentication"]
+        G[JWT Tokens]
+        H[OAuth 2.0]
+        I[2FA]
+    end
+    
+    subgraph Backend["Backend Services"]
+        J[User Management]
+        K[Exam Engine]
+        L[Analytics Service]
+        M[Payment Service]
+        N[Notification Service]
+        O[AI/ML Service]
+    end
+    
+    subgraph Database["Data Layer"]
+        P[(PostgreSQL - Primary)]
+        Q[(MongoDB - Logs)]
+        R[(Redis - Cache)]
+        S[(S3 - Files)]
+    end
+    
+    subgraph External["External Services"]
+        T[Razorpay API]
+        U[SMS Gateway]
+        V[Email Service]
+        W[AI Models]
+    end
+    
+    A --> D
+    B --> D
+    C --> D
+    D --> G
+    E --> G
+    F --> G
+    G --> J
+    G --> K
+    G --> L
+    K --> M
+    J --> N
+    L --> O
+    M --> T
+    N --> U
+    N --> V
+    O --> W
+    J --> P
+    K --> P
+    L --> Q
+    K --> R
+    J --> S
+    
+    style Frontend fill:#667eea,stroke:#333,stroke-width:2px,color:#fff
+    style Backend fill:#764ba2,stroke:#333,stroke-width:2px,color:#fff
+    style External fill:#f093fb,stroke:#333,stroke-width:2px,color:#fff
+                </div>
+            </div>
+
+            <div class="grid grid-cols-2 gap-8 mb-8">
+                <div class="feature-card card-hover">
+                    <h3 class="text-2xl font-bold mb-4 gradient-text">💻 Technology Stack</h3>
+                    <div class="space-y-4">
+                        <div>
+                            <h4 class="font-bold mb-2">Frontend:</h4>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="tech-stack-badge">React.js</span>
+                                <span class="tech-stack-badge">Next.js</span>
+                                <span class="tech-stack-badge">TypeScript</span>
+                                <span class="tech-stack-badge">Tailwind CSS</span>
+                                <span class="tech-stack-badge">Redux</span>
+                            </div>
+                        </div>
+                        <div>
+                            <h4 class="font-bold mb-2">Backend:</h4>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="tech-stack-badge">Node.js</span>
+                                <span class="tech-stack-badge">Express.js</span>
+                                <span class="tech-stack-badge">Python (AI)</span>
+                                <span class="tech-stack-badge">GraphQL</span>
+                            </div>
+                        </div>
+                        <div>
+                            <h4 class="font-bold mb-2">Database:</h4>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="tech-stack-badge">PostgreSQL</span>
+                                <span class="tech-stack-badge">MongoDB</span>
+                                <span class="tech-stack-badge">Redis</span>
+                            </div>
+                        </div>
+                        <div>
+                            <h4 class="font-bold mb-2">AI/ML:</h4>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="tech-stack-badge">TensorFlow</span>
+                                <span class="tech-stack-badge">OpenAI API</span>
+                                <span class="tech-stack-badge">NLP Models</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="feature-card card-hover">
+                    <h3 class="text-2xl font-bold mb-4 gradient-text">🔒 Security Features</h3>
+                    <ul class="space-y-2 text-gray-700">
+                        <li>✓ End-to-end encryption</li>
+                        <li>✓ Role-based access control (RBAC)</li>
+                        <li>✓ Multi-factor authentication</li>
+                        <li>✓ SQL injection prevention</li>
+                        <li>✓ XSS protection</li>
+                        <li>✓ CSRF tokens</li>
+                        <li>✓ Rate limiting</li>
+                        <li>✓ Data encryption at rest</li>
+                        <li>✓ Regular security audits</li>
+                        <li>✓ GDPR compliance</li>
+                        <li>✓ Secure payment gateway integration</li>
+                        <li>✓ Session management</li>
+                        <li>✓ IP whitelisting for sensitive operations</li>
+                        <li>✓ Automated backup systems</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="bg-gradient-to-r from-green-50 to-teal-50 rounded-2xl p-8">
+                <h3 class="text-3xl font-bold mb-6 gradient-text">⚡ Performance & Scalability</h3>
+                <div class="grid grid-cols-3 gap-6">
+                    <div class="bg-white p-6 rounded-xl">
+                        <h4 class="font-bold text-lg mb-3">🚀 Speed</h4>
+                        <ul class="text-sm space-y-2 text-gray-700">
+                            <li>• CDN for static assets</li>
+                            <li>• Redis caching layer</li>
+                            <li>• Lazy loading</li>
+                            <li>• Code splitting</li>
+                            <li>• Image optimization</li>
+                            <li>• Database indexing</li>
+                            <li>• Query optimization</li>
+                        </ul>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl">
+                        <h4 class="font-bold text-lg mb-3">📈 Scalability</h4>
+                        <ul class="text-sm space-y-2 text-gray-700">
+                            <li>• Microservices architecture</li>
+                            <li>• Horizontal scaling</li>
+                            <li>• Load balancing</li>
+                            <li>• Auto-scaling groups</li>
+                            <li>• Database sharding</li>
+                            <li>• Message queues</li>
+                            <li>• Containerization (Docker)</li>
+                        </ul>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl">
+                        <h4 class="font-bold text-lg mb-3">🛡️ Reliability</h4>
+                        <ul class="text-sm space-y-2 text-gray-700">
+                            <li>• 99.9% uptime SLA</li>
+                            <li>• Automated backups</li>
+                            <li>• Disaster recovery</li>
+                            <li>• Failover systems</li>
+                            <li>• Error monitoring</li>
+                            <li>• Health checks</li>
+                            <li>• Incident response</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AI Features Summary -->
+    <section id="ai" class="section gradient-bg text-white">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-5xl font-bold mb-12 text-center">🤖 AI-Powered Smart College Revolution</h2>
+            
+            <div class="grid grid-cols-2 gap-8 mb-12">
+                <div class="bg-white bg-opacity-10 rounded-2xl p-8 backdrop-blur-lg">
+                    <h3 class="text-3xl font-bold mb-6">Why AI Changes Everything</h3>
+                    <ul class="space-y-3 text-lg">
+                        <li>✨ Reduces administrative workload by 70%</li>
+                        <li>✨ Personalized learning paths for every student</li>
+                        <li>✨ Predictive analytics prevent student failures</li>
+                        <li>✨ Voice-enabled natural interaction</li>
+                        <li>✨ Real-time insights for decision makers</li>
+                        <li>✨ Automated report generation</li>
+                        <li>✨ 24/7 intelligent assistance</li>
+                    </ul>
+                </div>
+
+                <div class="bg-white bg-opacity-10 rounded-2xl p-8 backdrop-blur-lg">
+                    <h3 class="text-3xl font-bold mb-6">AI Capabilities Across Roles</h3>
+                    <div class="space-y-4">
+                        <div>
+                            <strong class="text-xl">👨‍🎓 Students:</strong>
+                            <p>Personalized study assistant, performance prediction, concept clarification</p>
+                        </div>
+                        <div>
+                            <strong class="text-xl">👨‍🏫 Professors:</strong>
+                            <p>Question difficulty analysis, student performance insights, revenue optimization</p>
+                        </div>
+                        <div>
+                            <strong class="text-xl">👔 Coordinators:</strong>
+                            <p>Class engagement analysis, intervention recommendations, resource optimization</p>
+                        </div>
+                        <div>
+                            <strong class="text-xl">🎓 HOD:</strong>
+                            <p>Department benchmarking, faculty effectiveness, parent communication support</p>
+                        </div>
+                        <div>
+                            <strong class="text-xl">👨‍💼 Principal:</strong>
+                            <p>Strategic planning, predictive analytics, institutional growth forecasting</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white text-gray-800 rounded-2xl p-8 ai-glow">
+                <h3 class="text-3xl font-bold mb-6 gradient-text text-center">🎯 Competitive Advantages</h3>
+                <div class="grid grid-cols-4 gap-6">
+                    <div class="text-center p-6">
+                        <div class="text-5xl mb-3">⚡</div>
+                        <h4 class="font-bold text-lg mb-2">Speed</h4>
+                        <p class="text-sm text-gray-600">10x faster than traditional methods</p>
+                    </div>
+                    <div class="text-center p-6">
+                        <div class="text-5xl mb-3">💰</div>
+                        <h4 class="font-bold text-lg mb-2">Cost Savings</h4>
+                        <p class="text-sm text-gray-600">60% reduction in operational costs</p>
+                    </div>
+                    <div class="text-center p-6">
+                        <div class="text-5xl mb-3">📊</div>
+                        <h4 class="font-bold text-lg mb-2">Data-Driven</h4>
+                        <p class="text-sm text-gray-600">Decisions based on real analytics</p>
+                    </div>
+                    <div class="text-center p-6">
+                        <div class="text-5xl mb-3">🚀</div>
+                        <h4 class="font-bold text-lg mb-2">Scalability</h4>
+                        <p class="text-sm text-gray-600">Grows with your institution</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Implementation Roadmap -->
+    <section id="features" class="section bg-white">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-5xl font-bold gradient-text mb-12 text-center">🗺️ Implementation Roadmap</h2>
+            
+            <div class="space-y-6">
+                <div class="feature-card card-hover">
+                    <div class="flex items-start gap-6">
+                        <div class="flex-shrink-0">
+                            <div class="w-16 h-16 rounded-full gradient-bg text-white flex items-center justify-center text-2xl font-bold">1</div>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="text-2xl font-bold mb-3 gradient-text">Phase 1: Core Platform (Months 1-3)</h3>
+                            <ul class="grid grid-cols-2 gap-3 text-gray-700">
+                                <li>✓ User authentication system</li>
+                                <li>✓ Basic exam creation and conduction</li>
+                                <li>✓ Student registration and enrollment</li>
+                                <li>✓ Payment gateway integration</li>
+                                <li>✓ Result processing system</li>
+                                <li>✓ Notes upload and management</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="feature-card card-hover">
+                    <div class="flex items-start gap-6">
+                        <div class="flex-shrink-0">
+                            <div class="w-16 h-16 rounded-full gradient-bg text-white flex items-center justify-center text-2xl font-bold">2</div>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="text-2xl font-bold mb-3 gradient-text">Phase 2: Advanced Features (Months 4-6)</h3>
+                            <ul class="grid grid-cols-2 gap-3 text-gray-700">
+                                <li>✓ Analytics dashboards for all roles</li>
+                                <li>✓ Advanced exam features (randomization, etc.)</li>
+                                <li>✓ Communication tools</li>
+                                <li>✓ Parent interface</li>
+                                <li>✓ Mobile app development</li>
+                                <li>✓ Offline capabilities</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="feature-card card-hover">
+                    <div class="flex items-start gap-6">
+                        <div class="flex-shrink-0">
+                            <div class="w-16 h-16 rounded-full gradient-bg text-white flex items-center justify-center text-2xl font-bold">3</div>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="text-2xl font-bold mb-3 gradient-text">Phase 3: AI Integration (Months 7-9)</h3>
+                            <ul class="grid grid-cols-2 gap-3 text-gray-700">
+                                <li>✓ AI chatbot for students</li>
+                                <li>✓ Voice-enabled assistants</li>
+                                <li>✓ Predictive analytics engine</li>
+                                <li>✓ Performance forecasting</li>
+                                <li>✓ Automated insights generation</li>
+                                <li>✓ Smart recommendations system</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="feature-card card-hover">
+                    <div class="flex items-start gap-6">
+                        <div class="flex-shrink-0">
+                            <div class="w-16 h-16 rounded-full gradient-bg text-white flex items-center justify-center text-2xl font-bold">4</div>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="text-2xl font-bold mb-3 gradient-text">Phase 4: Scale & Optimize (Months 10-12)</h3>
+                            <ul class="grid grid-cols-2 gap-3 text-gray-700">
+                                <li>✓ Performance optimization</li>
+                                <li>✓ Advanced security features</li>
+                                <li>✓ Third-party integrations</li>
+                                <li>✓ White-label options</li>
+                                <li>✓ Multi-language support</li>
+                                <li>✓ Enterprise features</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="section gradient-bg text-white">
+        <div class="max-w-5xl mx-auto text-center">
+            <h2 class="text-6xl font-bold mb-6">Ready to Transform Your Institution?</h2>
+            <p class="text-2xl mb-12 opacity-90">Join the smart college revolution with AI-powered education management</p>
+            
+            <div class="grid grid-cols-3 gap-8 mb-12">
+                <div class="bg-white bg-opacity-10 p-8 rounded-2xl backdrop-blur-lg">
+                    <div class="text-5xl mb-4">🎯</div>
+                    <h3 class="text-2xl font-bold mb-3">Mission</h3>
+                    <p>Reduce administrative workload by 80% while improving educational outcomes</p>
+                </div>
+                <div class="bg-white bg-opacity-10 p-8 rounded-2xl backdrop-blur-lg">
+                    <div class="text-5xl mb-4">👥</div>
+                    <h3 class="text-2xl font-bold mb-3">Impact</h3>
+                    <p>Empower 10,000+ students and 500+ faculty members with smart tools</p>
+                </div>
+                <div class="bg-white bg-opacity-10 p-8 rounded-2xl backdrop-blur-lg">
+                    <div class="text-5xl mb-4">🚀</div>
+                    <h3 class="text-2xl font-bold mb-3">Vision</h3>
+                    <p>Become the #1 education ERP platform in India by 2027</p>
+                </div>
+            </div>
+
+            <div class="text-xl">
+                <p class="mb-4">This platform represents the future of educational administration.</p>
+                <p class="font-bold text-2xl">Let's build it together! 🚀</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-8">
+        <div class="max-w-7xl mx-auto text-center">
+            <p class="text-lg mb-4">Smart Exam & Learning Management System</p>
+            <p class="text-gray-400">© 2026 - Revolutionizing Education Through Technology</p>
+        </div>
+    </footer>
+
+    <script>
+        mermaid.initialize({ 
+            startOnLoad: true,
+            theme: 'default',
+            flowchart: {
+                useMaxWidth: true,
+                htmlLabels: true,
+                curve: 'basis'
+            }
+        });
+
+        function scrollToSection(sectionId) {
+            const element = document.getElementById(sectionId);
+            if (element) {
+                element.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+
+        // Smooth scrolling for all navigation
+        document.addEventListener('DOMContentLoaded', function() {
+            const links = document.querySelectorAll('a[href^="#"]');
+            links.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({ behavior: 'smooth' });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
