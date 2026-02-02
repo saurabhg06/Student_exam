@@ -1571,7 +1571,7 @@ graph TB
                             <div class="w-16 h-16 rounded-full gradient-bg text-white flex items-center justify-center text-2xl font-bold">1</div>
                         </div>
                         <div class="flex-1">
-                            <h3 class="text-2xl font-bold mb-4 gradient-text">Phase 1: Core Platform Foundation (Months 1-3)</h3>
+                            <h3 class="text-2xl font-bold mb-4 gradient-text">Phase 1 Package : Core Platform Foundation (Months 1-2)</h3>
                             <p class="text-gray-600 mb-4"><strong>Objective:</strong> Build the foundational platform with user management, basic exam system, and payment integration.</p>
                             
                             <div class="grid grid-cols-2 gap-4 mb-4">
@@ -1581,11 +1581,11 @@ graph TB
                                         <li>• Multi-role authentication system (Student, Professor, Coordinator, HOD, Principal)</li>
                                         <li>• JWT-based secure login with session management</li>
                                         <li>• Multi-factor authentication (2FA) support</li>
-                                        <li>• Email/SMS verification system</li>
+                                        <!-- <li>• Email/SMS verification system</li> -->
                                         <li>• Role-based access control (RBAC)</li>
                                         <li>• User role hierarchy implementation</li>
-                                        <li>• Password reset and recovery flows</li>
-                                        <li>• Activity logging and audit trails</li>
+                                        <!-- <li>• Password reset and recovery flows</li>
+                                        <li>• Activity logging and audit trails</li> -->
                                     </ul>
                                 </div>
                                 
@@ -1593,9 +1593,9 @@ graph TB
                                     <h4 class="font-bold mb-3 text-gray-800">Core Exam Engine</h4>
                                     <ul class="text-sm space-y-2 text-gray-700">
                                         <li>• Exam creation interface for professors</li>
-                                        <li>• Question bank management (MCQ, Numerical, Multi-select)</li>
+                                        <li>• Question bank management (MCQ)</li>
                                         <li>• Exam scheduling and duration settings</li>
-                                        <li>• Basic exam conduction interface (similar to JEE/NEET)</li>
+                                        <li>• Exam conduction interface (similar to JEE/NEET)</li>
                                         <li>• Timer functionality with auto-submit</li>
                                         <li>• Question navigation panel</li>
                                         <li>• Answer recording and auto-save mechanism</li>
@@ -1604,7 +1604,7 @@ graph TB
                                 </div>
                                 
                                 <div class="bg-gray-50 p-4 rounded-lg">
-                                    <h4 class="font-bold mb-3 text-gray-800">Student Portal Basics</h4>
+                                    <h4 class="font-bold mb-3 text-gray-800">Student Portal</h4>
                                     <ul class="text-sm space-y-2 text-gray-700">
                                         <li>• Student registration workflow</li>
                                         <li>• Class coordinator approval system</li>
@@ -1614,6 +1614,62 @@ graph TB
                                         <li>• Results display (basic)</li>
                                         <li>• Score and marks breakdown</li>
                                         <li>• Result download in PDF format</li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="bg-gray-50 p-4 rounded-lg">
+                                    <h4 class="font-bold mb-3 text-gray-800">Professor Portal Basics</h4>
+                                    <ul class="text-sm space-y-2 text-gray-700">
+                                        <li>• Professor registration and approval workflow</li>
+                                        <li>• Dashboard with exam creation interface</li>
+                                        <li>• Basic exam creation (manual entry)</li>
+                                        <li>• Question management and storage</li>
+                                        <li>• Exam scheduling and publish</li>
+                                        <li>• Notes upload and organization</li>
+                                        <li>• View enrolled students list</li>
+                                        <li>• Basic result viewing and download</li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="bg-gray-50 p-4 rounded-lg">
+                                    <h4 class="font-bold mb-3 text-gray-800">Coordinator Portal Basics</h4>
+                                    <ul class="text-sm space-y-2 text-gray-700">
+                                        <li>• Coordinator registration and approval workflow</li>
+                                        <li>• Dashboard with class management interface</li>
+                                        <li>• Student registration approval system</li>
+                                        <li>• View and manage class students list</li>
+                                        <li>• Basic class analytics (enrollment, participation)</li>
+                                        <!-- <li>• Professor assignment to classes/subjects</li>
+                                        <li>• Class announcements broadcast</li>
+                                        <li>• Exam tracking for assigned classes</li> -->
+                                    </ul>
+                                </div>
+
+                                <div class="bg-gray-50 p-4 rounded-lg">
+                                    <h4 class="font-bold mb-3 text-gray-800">HOD Portal Basics</h4>
+                                    <ul class="text-sm space-y-2 text-gray-700">
+                                        <li>• HOD registration and approval workflow</li>
+                                        <li>• Dashboard with department overview</li>
+                                        <li>• Coordinator registration approval system</li>
+                                        <li>• View all coordinators and classes in department</li>
+                                        <!-- <li>• Department-level coordinator management</li>
+                                        <li>• Monitor exam creation by professors</li>
+                                        <li>• Basic department statistics (student count, exams)</li>
+                                        <li>• Approval and rejection workflows</li> -->
+                                    </ul>
+                                </div>
+
+                                <div class="bg-gray-50 p-4 rounded-lg">
+                                    <h4 class="font-bold mb-3 text-gray-800">Principal Portal Basics</h4>
+                                    <ul class="text-sm space-y-2 text-gray-700">
+                                        <li>• Principal login and dashboard initialization</li>
+                                        <li>• HOD registration approval system</li>
+                                        <li>• Professor registration approval interface</li>
+                                        <li>• View all HODs and their departments</li>
+                                        <li>• College-wide user management</li>
+                                        <li>• Overall system statistics and monitoring</li>
+                                        <li>• Approval/rejection of HODs and Professors</li>
+                                        <li>• System health and activity monitoring</li>
                                     </ul>
                                 </div>
                                 
@@ -1638,14 +1694,14 @@ graph TB
                                         <li>• Subject-wise organization</li>
                                         <li>• Professor note uploads</li>
                                         <li>• Student note access and downloads</li>
-                                        <li>• Version management</li>
+                                        <!-- <li>• Version management</li> -->
                                         <li>• File storage and retrieval (S3/Cloud)</li>
                                         <li>• Basic search functionality</li>
-                                        <li>• Download tracking analytics</li>
+                                        <!-- <li>• Download tracking analytics</li> -->
                                     </ul>
                                 </div>
                                 
-                                <div class="bg-gray-50 p-4 rounded-lg">
+                                <!-- <div class="bg-gray-50 p-4 rounded-lg">
                                     <h4 class="font-bold mb-3 text-gray-800">Notification System</h4>
                                     <ul class="text-sm space-y-2 text-gray-700">
                                         <li>• Email notification service</li>
@@ -1657,7 +1713,7 @@ graph TB
                                         <li>• Note upload alerts</li>
                                         <li>• Notification preference management</li>
                                     </ul>
-                                </div>
+                                </div> -->
                                 
                                 <div class="bg-gray-50 p-4 rounded-lg">
                                     <h4 class="font-bold mb-3 text-gray-800">Approval Workflows</h4>
@@ -1689,7 +1745,7 @@ graph TB
                             <div class="w-16 h-16 rounded-full gradient-bg text-white flex items-center justify-center text-2xl font-bold">2</div>
                         </div>
                         <div class="flex-1">
-                            <h3 class="text-2xl font-bold mb-4 gradient-text">Phase 2: Advanced Features & Analytics (Months 4-6)</h3>
+                            <h3 class="text-2xl font-bold mb-4 gradient-text">Phase 2: Advanced Features & Analytics (Months 3-4)</h3>
                             <p class="text-gray-600 mb-4"><strong>Objective:</strong> Implement comprehensive analytics dashboards for all roles, advanced exam features, parent interface, and mobile support.</p>
                             
                             <div class="grid grid-cols-2 gap-4 mb-4">
@@ -1863,7 +1919,7 @@ graph TB
                             <div class="w-16 h-16 rounded-full gradient-bg text-white flex items-center justify-center text-2xl font-bold">3</div>
                         </div>
                         <div class="flex-1">
-                            <h3 class="text-2xl font-bold mb-4 gradient-text">Phase 3: AI Integration & Intelligence (Months 7-9)</h3>
+                            <h3 class="text-2xl font-bold mb-4 gradient-text">Phase 3: AI Integration & Intelligence (Months 3-4)</h3>
                             <p class="text-gray-600 mb-4"><strong>Objective:</strong> Implement AI-powered features for personalized learning, smart recommendations, and predictive analytics across all user roles.</p>
                             
                             <div class="grid grid-cols-2 gap-4 mb-4">
@@ -2037,7 +2093,7 @@ graph TB
                             <div class="w-16 h-16 rounded-full gradient-bg text-white flex items-center justify-center text-2xl font-bold">4</div>
                         </div>
                         <div class="flex-1">
-                            <h3 class="text-2xl font-bold mb-4 gradient-text">Phase 4: Scale, Security & Enterprise (Months 10-12)</h3>
+                            <h3 class="text-2xl font-bold mb-4 gradient-text">Phase 4: Scale, Security & Enterprise (Months 3-4)</h3>
                             <p class="text-gray-600 mb-4"><strong>Objective:</strong> Optimize for scale, implement advanced security features, integrate third-party services, and prepare for enterprise deployment.</p>
                             
                             <div class="grid grid-cols-2 gap-4 mb-4">
