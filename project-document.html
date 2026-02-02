@@ -1,0 +1,849 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Exam Management System - Project Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@10.6.1/dist/mermaid.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .print-area {
+            background: white;
+            color: #1a202c;
+        }
+        @media print {
+            body * {
+                visibility: hidden;
+            }
+            .print-area, .print-area * {
+                visibility: visible;
+            }
+            .print-area {
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 100%;
+            }
+            .no-print {
+                display: none !important;
+            }
+        }
+        .feature-section {
+            page-break-inside: avoid;
+            margin-bottom: 2rem;
+        }
+        .feature-item {
+            padding: 0.5rem 0;
+            border-left: 3px solid #667eea;
+            padding-left: 1rem;
+            margin: 0.5rem 0;
+        }
+        .mermaid {
+            background: white;
+            padding: 1rem;
+            margin: 1rem 0;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="no-print bg-gradient-to-r from-purple-600 to-indigo-600 text-white p-4 sticky top-0 z-50 shadow-lg">
+        <div class="container mx-auto flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                </svg>
+                <span class="text-xl font-bold">Student Exam System - Project Document</span>
+            </div>
+            <div class="flex space-x-4">
+                <a href="index.html" class="hover:text-purple-200 transition">Home</a>
+                <a href="flowcharts.html" class="hover:text-purple-200 transition">Flowcharts</a>
+                <a href="proposal.html" class="hover:text-purple-200 transition">Proposal</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Download Button -->
+    <div class="no-print container mx-auto mt-8 text-center">
+        <button onclick="downloadPDF()" class="bg-gradient-to-r from-green-500 to-green-600 text-white px-8 py-4 rounded-lg font-bold text-lg hover:from-green-600 hover:to-green-700 transition shadow-lg hover:shadow-xl transform hover:scale-105">
+            <svg class="inline w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+            </svg>
+            Download Project Document as PDF
+        </button>
+        <p class="mt-4 text-gray-600">Click to generate and download the complete project documentation</p>
+    </div>
+
+    <!-- Print Area -->
+    <div id="printArea" class="print-area container mx-auto bg-white shadow-2xl rounded-lg p-12 my-8 max-w-5xl">
+        <!-- Header -->
+        <div class="text-center mb-12 border-b-4 border-purple-600 pb-6">
+            <h1 class="text-4xl font-bold text-gray-800 mb-2">Student Exam Management System</h1>
+            <p class="text-xl text-purple-600 font-semibold">Comprehensive Project Documentation</p>
+            <p class="text-gray-600 mt-2">AI-Powered Multi-Role Examination Platform</p>
+            <p class="text-sm text-gray-500 mt-4">Generated on: <span id="currentDate"></span></p>
+        </div>
+
+        <!-- Executive Summary -->
+        <div class="feature-section">
+            <h2 class="text-3xl font-bold text-gray-800 mb-4 border-l-4 border-purple-600 pl-4">Executive Summary</h2>
+            <p class="text-gray-700 leading-relaxed mb-4">
+                The Student Exam Management System is a comprehensive, multi-role digital platform designed to revolutionize the examination process in educational institutions. This system provides seamless integration between five key stakeholders: Students, Professors, Class Coordinators, Heads of Departments (HODs), and Principals.
+            </p>
+            <p class="text-gray-700 leading-relaxed">
+                Built with modern technologies and incorporating AI-powered features, the platform offers end-to-end examination management from creation and scheduling to conduction, evaluation, and result publication, all while maintaining the highest standards of security and user experience.
+            </p>
+        </div>
+
+        <!-- System Architecture Flowchart -->
+        <div class="feature-section">
+            <h2 class="text-3xl font-bold text-gray-800 mb-4 border-l-4 border-purple-600 pl-4">System Architecture</h2>
+            <div class="mermaid">
+graph TB
+    A[Student Exam Management System] --> B[Authentication Layer]
+    A --> C[Core Exam Engine]
+    A --> D[Payment Gateway]
+    A --> E[Notes Management]
+    
+    B --> B1[Student Portal]
+    B --> B2[Professor Portal]
+    B --> B3[Coordinator Portal]
+    B --> B4[HOD Portal]
+    B --> B5[Principal Portal]
+    
+    C --> C1[Exam Creation]
+    C --> C2[Question Bank]
+    C --> C3[Exam Conduction]
+    C --> C4[Result Generation]
+    
+    D --> D1[Razorpay Integration]
+    D --> D2[Transaction Logging]
+    
+    E --> E1[File Storage]
+    E --> E2[Subject Organization]
+    
+    style A fill:#667eea,stroke:#333,stroke-width:4px,color:#fff
+    style B fill:#48bb78,stroke:#333,stroke-width:2px,color:#fff
+    style C fill:#f6ad55,stroke:#333,stroke-width:2px,color:#fff
+    style D fill:#fc8181,stroke:#333,stroke-width:2px,color:#fff
+    style E fill:#4299e1,stroke:#333,stroke-width:2px,color:#fff
+            </div>
+        </div>
+
+        <!-- Authentication & User Management -->
+        <div class="feature-section">
+            <h2 class="text-3xl font-bold text-gray-800 mb-4 border-l-4 border-purple-600 pl-4">1. Authentication & User Management</h2>
+            <div class="space-y-2">
+                <div class="feature-item">
+                    <span class="font-semibold text-gray-800">Multi-role authentication system</span>
+                    <span class="text-gray-600"> - Support for Student, Professor, Coordinator, HOD, and Principal roles</span>
+                </div>
+                <div class="feature-item">
+                    <span class="font-semibold text-gray-800">JWT-based secure login</span>
+                    <span class="text-gray-600"> - Token-based authentication with session management</span>
+                </div>
+                <div class="feature-item">
+                    <span class="font-semibold text-gray-800">Multi-factor authentication (2FA)</span>
+                    <span class="text-gray-600"> - Enhanced security with SMS/Email OTP verification</span>
+                </div>
+                <div class="feature-item">
+                    <span class="font-semibold text-gray-800">Role-based access control (RBAC)</span>
+                    <span class="text-gray-600"> - Granular permissions management for each user role</span>
+                </div>
+                <div class="feature-item">
+                    <span class="font-semibold text-gray-800">User role hierarchy implementation</span>
+                    <span class="text-gray-600"> - Structured approval and management chain</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Authentication Flow -->
+        <div class="feature-section">
+            <h3 class="text-2xl font-bold text-gray-800 mb-4">Authentication Flow Diagram</h3>
+            <div class="mermaid">
+graph LR
+    A[User Login] --> B{Role Verification}
+    B -->|Student| C[Student Dashboard]
+    B -->|Professor| D[Professor Dashboard]
+    B -->|Coordinator| E[Coordinator Dashboard]
+    B -->|HOD| F[HOD Dashboard]
+    B -->|Principal| G[Principal Dashboard]
+    
+    A --> H[JWT Token Generation]
+    H --> I[2FA Verification]
+    I --> J[Session Management]
+    
+    style A fill:#667eea,stroke:#333,stroke-width:2px,color:#fff
+    style B fill:#f6ad55,stroke:#333,stroke-width:2px,color:#fff
+    style C fill:#48bb78,stroke:#333,stroke-width:2px
+    style D fill:#48bb78,stroke:#333,stroke-width:2px
+    style E fill:#48bb78,stroke:#333,stroke-width:2px
+    style F fill:#48bb78,stroke:#333,stroke-width:2px
+    style G fill:#48bb78,stroke:#333,stroke-width:2px
+            </div>
+        </div>
+
+        <!-- Core Exam Engine -->
+        <div class="feature-section">
+            <h2 class="text-3xl font-bold text-gray-800 mb-4 border-l-4 border-purple-600 pl-4">2. Core Exam Engine</h2>
+            <div class="space-y-2">
+                <div class="feature-item">
+                    <span class="font-semibold text-gray-800">Exam creation interface</span>
+                    <span class="text-gray-600"> - Intuitive UI for professors to design examinations</span>
+                </div>
+                <div class="feature-item">
+                    <span class="font-semibold text-gray-800">Question bank management (MCQ)</span>
+                    <span class="text-gray-600"> - Centralized repository for multiple-choice questions</span>
+                </div>
+                <div class="feature-item">
+                    <span class="font-semibold text-gray-800">Exam scheduling</span>
+                    <span class="text-gray-600"> - Flexible date, time, and duration configuration</span>
+                </div>
+                <div class="feature-item">
+                    <span class="font-semibold text-gray-800">Exam conduction interface</span>
+                    <span class="text-gray-600"> - Professional interface similar to JEE/NEET examinations</span>
+                </div>
+                <div class="feature-item">
+                    <span class="font-semibold text-gray-800">Timer functionality</span>
+                    <span class="text-gray-600"> - Real-time countdown with automatic submission on timeout</span>
+                </div>
+                <div class="feature-item">
+                    <span class="font-semibold text-gray-800">Question navigation panel</span>
+                    <span class="text-gray-600"> - Easy access to all questions with status indicators</span>
+                </div>
+                <div class="feature-item">
+                    <span class="font-semibold text-gray-800">Answer recording and auto-save</span>
+                    <span class="text-gray-600"> - Continuous backup to prevent data loss</span>
+                </div>
+                <div class="feature-item">
+                    <span class="font-semibold text-gray-800">Exam submission and summary</span>
+                    <span class="text-gray-600"> - Detailed review window before final submission</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Exam Flow -->
+        <div class="feature-section">
+            <h3 class="text-2xl font-bold text-gray-800 mb-4">Exam Conduction Flow</h3>
+            <div class="mermaid">
+graph TB
+    A[Student Enrolls] --> B[Payment Processing]
+    B --> C[Exam Day Arrives]
+    C --> D[Student Logs In]
+    D --> E[Verification]
+    E --> F[Exam Instructions]
+    F --> G[Start Exam]
+    G --> H[Question Navigation]
+    H --> I[Answer Selection]
+    I --> J{Time Remaining?}
+    J -->|Yes| H
+    J -->|No| K[Auto Submit]
+    I --> L[Manual Submit]
+    L --> M[Summary Window]
+    K --> M
+    M --> N[Confirm Submission]
+    N --> O[Result Processing]
+    O --> P[Result Publication]
+    
+    style A fill:#667eea,stroke:#333,stroke-width:2px,color:#fff
+    style B fill:#f6ad55,stroke:#333,stroke-width:2px,color:#fff
+    style G fill:#48bb78,stroke:#333,stroke-width:2px,color:#fff
+    style P fill:#9f7aea,stroke:#333,stroke-width:2px,color:#fff
+            </div>
+        </div>
+
+        <!-- Student Portal -->
+        <div class="feature-section">
+            <h2 class="text-3xl font-bold text-gray-800 mb-4 border-l-4 border-purple-600 pl-4">3. Student Portal</h2>
+            <div class="space-y-2">
+                <div class="feature-item">
+                    <span class="font-semibold text-gray-800">Student registration workflow</span>
+                    <span class="text-gray-600"> - Comprehensive onboarding process with document verification</span>
+                </div>
+                <div class="feature-item">
+                    <span class="font-semibold text-gray-800">Class coordinator approval system</span>
+                    <span class="text-gray-600"> - Multi-level verification for genuine registrations</span>
+                </div>
+                <div class="feature-item">
+                    <span class="font-semibold text-gray-800">Dashboard with exam listings</span>
+                    <span class="text-gray-600"> - Centralized view of all available examinations</span>
+                </div>
+                <div class="feature-item">
+                    <span class="font-semibold text-gray-800">Exam enrollment functionality</span>
+                    <span class="text-gray-600"> - One-click registration for examinations</span>
+                </div>
+                <div class="feature-item">
+                    <span class="font-semibold text-gray-800">Exam status tracking</span>
+                    <span class="text-gray-600"> - Real-time updates on Upcoming, Ongoing, and Past exams</span>
+                </div>
+                <div class="feature-item">
+                    <span class="font-semibold text-gray-800">Results display</span>
+                    <span class="text-gray-600"> - Instant access to examination results</span>
+                </div>
+                <div class="feature-item">
+                    <span class="font-semibold text-gray-800">Score and marks breakdown</span>
+                    <span class="text-gray-600"> - Detailed analytics of performance</span>
+                </div>
+                <div class="feature-item">
+                    <span class="font-semibold text-gray-800">Result download in PDF format</span>
+                    <span class="text-gray-600"> - Professional certificate generation</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Professor Portal -->
+        <div class="feature-section">
+            <h2 class="text-3xl font-bold text-gray-800 mb-4 border-l-4 border-purple-600 pl-4">4. Professor Portal</h2>
+            <div class="space-y-2">
+                <div class="feature-item">
+                    <span class="font-semibold text-gray-800">Registration and approval workflow</span>
+                    <span class="text-gray-600"> - Principal-reviewed onboarding process</span>
+                </div>
+                <div class="feature-item">
+                    <span class="font-semibold text-gray-800">Dashboard with exam creation interface</span>
+                    <span class="text-gray-600"> - Centralized exam management hub</span>
+                </div>
+                <div class="feature-item">
+                    <span class="font-semibold text-gray-800">Exam creation (manual entry)</span>
+                    <span class="text-gray-600"> - Step-by-step exam design workflow</span>
+                </div>
+                <div class="feature-item">
+                    <span class="font-semibold text-gray-800">Question management and storage</span>
+                    <span class="text-gray-600"> - Organized question bank with tagging system</span>
+                </div>
+                <div class="feature-item">
+                    <span class="font-semibold text-gray-800">Exam scheduling and publish</span>
+                    <span class="text-gray-600"> - Configure dates, duration, and availability</span>
+                </div>
+                <div class="feature-item">
+                    <span class="font-semibold text-gray-800">Notes upload and organization</span>
+                    <span class="text-gray-600"> - Subject-wise digital resource library</span>
+                </div>
+                <div class="feature-item">
+                    <span class="font-semibold text-gray-800">View enrolled students list</span>
+                    <span class="text-gray-600"> - Track examination participation</span>
+                </div>
+                <div class="feature-item">
+                    <span class="font-semibold text-gray-800">Result viewing and download</span>
+                    <span class="text-gray-600"> - Comprehensive analytics and report generation</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Coordinator Portal -->
+        <div class="feature-section">
+            <h2 class="text-3xl font-bold text-gray-800 mb-4 border-l-4 border-purple-600 pl-4">5. Coordinator Portal</h2>
+            <div class="space-y-2">
+                <div class="feature-item">
+                    <span class="font-semibold text-gray-800">Registration and approval workflow</span>
+                    <span class="text-gray-600"> - HOD-reviewed onboarding process</span>
+                </div>
+                <div class="feature-item">
+                    <span class="font-semibold text-gray-800">Dashboard with class management interface</span>
+                    <span class="text-gray-600"> - Comprehensive class oversight tools</span>
+                </div>
+                <div class="feature-item">
+                    <span class="font-semibold text-gray-800">Student registration approval system</span>
+                    <span class="text-gray-600"> - Review and approve/reject student applications</span>
+                </div>
+                <div class="feature-item">
+                    <span class="font-semibold text-gray-800">View and manage class students list</span>
+                    <span class="text-gray-600"> - Complete roster with performance tracking</span>
+                </div>
+                <div class="feature-item">
+                    <span class="font-semibold text-gray-800">Basic class analytics</span>
+                    <span class="text-gray-600"> - Enrollment metrics and participation rates</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- HOD Portal -->
+        <div class="feature-section">
+            <h2 class="text-3xl font-bold text-gray-800 mb-4 border-l-4 border-purple-600 pl-4">6. HOD Portal</h2>
+            <div class="space-y-2">
+                <div class="feature-item">
+                    <span class="font-semibold text-gray-800">Registration and approval workflow</span>
+                    <span class="text-gray-600"> - Principal-approved department head access</span>
+                </div>
+                <div class="feature-item">
+                    <span class="font-semibold text-gray-800">Dashboard with department overview</span>
+                    <span class="text-gray-600"> - Holistic view of departmental activities</span>
+                </div>
+                <div class="feature-item">
+                    <span class="font-semibold text-gray-800">Coordinator registration approval system</span>
+                    <span class="text-gray-600"> - Review and manage coordinator applications</span>
+                </div>
+                <div class="feature-item">
+                    <span class="font-semibold text-gray-800">View coordinators and classes</span>
+                    <span class="text-gray-600"> - Department-wide organizational structure</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Principal Portal -->
+        <div class="feature-section">
+            <h2 class="text-3xl font-bold text-gray-800 mb-4 border-l-4 border-purple-600 pl-4">7. Principal Portal</h2>
+            <div class="space-y-2">
+                <div class="feature-item">
+                    <span class="font-semibold text-gray-800">Login and dashboard initialization</span>
+                    <span class="text-gray-600"> - Institutional command center with comprehensive analytics</span>
+                </div>
+                <div class="feature-item">
+                    <span class="font-semibold text-gray-800">HOD registration approval system</span>
+                    <span class="text-gray-600"> - Top-level approval for department heads</span>
+                </div>
+                <div class="feature-item">
+                    <span class="font-semibold text-gray-800">Professor registration approval interface</span>
+                    <span class="text-gray-600"> - Faculty verification and onboarding</span>
+                </div>
+                <div class="feature-item">
+                    <span class="font-semibold text-gray-800">View HODs and departments</span>
+                    <span class="text-gray-600"> - Complete organizational hierarchy</span>
+                </div>
+                <div class="feature-item">
+                    <span class="font-semibold text-gray-800">College-wide user management</span>
+                    <span class="text-gray-600"> - Centralized control over all system users</span>
+                </div>
+                <div class="feature-item">
+                    <span class="font-semibold text-gray-800">System statistics and monitoring</span>
+                    <span class="text-gray-600"> - Real-time institutional performance metrics</span>
+                </div>
+                <div class="feature-item">
+                    <span class="font-semibold text-gray-800">Approval/rejection of HODs and professors</span>
+                    <span class="text-gray-600"> - Final authority over faculty onboarding</span>
+                </div>
+                <div class="feature-item">
+                    <span class="font-semibold text-gray-800">System health and activity monitoring</span>
+                    <span class="text-gray-600"> - Technical oversight and performance tracking</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Approval Workflow -->
+        <div class="feature-section">
+            <h3 class="text-2xl font-bold text-gray-800 mb-4">User Approval Workflow</h3>
+            <div class="mermaid">
+graph TB
+    A[New User Registration] --> B{User Role?}
+    
+    B -->|Student| C[Submit Application]
+    C --> D[Coordinator Review]
+    D --> E{Approved?}
+    E -->|Yes| F[Student Access Granted]
+    E -->|No| G[Rejection with Feedback]
+    
+    B -->|Professor| H[Submit Application]
+    H --> I[Principal Review]
+    I --> J{Approved?}
+    J -->|Yes| K[Professor Access Granted]
+    J -->|No| L[Rejection with Feedback]
+    
+    B -->|Coordinator| M[Submit Application]
+    M --> N[HOD Review]
+    N --> O{Approved?}
+    O -->|Yes| P[Coordinator Access Granted]
+    O -->|No| Q[Rejection with Feedback]
+    
+    B -->|HOD| R[Submit Application]
+    R --> S[Principal Review]
+    S --> T{Approved?}
+    T -->|Yes| U[HOD Access Granted]
+    T -->|No| V[Rejection with Feedback]
+    
+    style A fill:#667eea,stroke:#333,stroke-width:2px,color:#fff
+    style B fill:#f6ad55,stroke:#333,stroke-width:2px,color:#fff
+    style F fill:#48bb78,stroke:#333,stroke-width:2px,color:#fff
+    style K fill:#48bb78,stroke:#333,stroke-width:2px,color:#fff
+    style P fill:#48bb78,stroke:#333,stroke-width:2px,color:#fff
+    style U fill:#48bb78,stroke:#333,stroke-width:2px,color:#fff
+    style G fill:#fc8181,stroke:#333,stroke-width:2px
+    style L fill:#fc8181,stroke:#333,stroke-width:2px
+    style Q fill:#fc8181,stroke:#333,stroke-width:2px
+    style V fill:#fc8181,stroke:#333,stroke-width:2px
+            </div>
+        </div>
+
+        <!-- Payment Integration -->
+        <div class="feature-section">
+            <h2 class="text-3xl font-bold text-gray-800 mb-4 border-l-4 border-purple-600 pl-4">8. Payment Integration</h2>
+            <div class="space-y-2">
+                <div class="feature-item">
+                    <span class="font-semibold text-gray-800">Razorpay gateway integration</span>
+                    <span class="text-gray-600"> - Secure and reliable payment processing</span>
+                </div>
+                <div class="feature-item">
+                    <span class="font-semibold text-gray-800">Multiple payment methods</span>
+                    <span class="text-gray-600"> - UPI, Credit/Debit Cards, Net Banking, and Wallets</span>
+                </div>
+                <div class="feature-item">
+                    <span class="font-semibold text-gray-800">Exam pricing configuration</span>
+                    <span class="text-gray-600"> - Flexible pricing from ₹0 to ₹10,000 per exam</span>
+                </div>
+                <div class="feature-item">
+                    <span class="font-semibold text-gray-800">Payment status tracking</span>
+                    <span class="text-gray-600"> - Real-time transaction monitoring</span>
+                </div>
+                <div class="feature-item">
+                    <span class="font-semibold text-gray-800">Transaction logging</span>
+                    <span class="text-gray-600"> - Comprehensive audit trail for all payments</span>
+                </div>
+                <div class="feature-item">
+                    <span class="font-semibold text-gray-800">Payment confirmation and receipts</span>
+                    <span class="text-gray-600"> - Automated email/SMS notifications with PDF receipts</span>
+                </div>
+                <div class="feature-item">
+                    <span class="font-semibold text-gray-800">Exam access control</span>
+                    <span class="text-gray-600"> - Automatic enrollment upon successful payment</span>
+                </div>
+                <div class="feature-item">
+                    <span class="font-semibold text-gray-800">Refund processing system</span>
+                    <span class="text-gray-600"> - Streamlined refund workflow for cancellations</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Payment Flow -->
+        <div class="feature-section">
+            <h3 class="text-2xl font-bold text-gray-800 mb-4">Payment Processing Flow</h3>
+            <div class="mermaid">
+graph LR
+    A[Student Selects Exam] --> B[Exam Price Check]
+    B -->|Free Exam| C[Direct Enrollment]
+    B -->|Paid Exam| D[Razorpay Gateway]
+    D --> E[Payment Method Selection]
+    E --> F{Payment Status}
+    F -->|Success| G[Transaction Logging]
+    F -->|Failed| H[Retry/Cancel]
+    G --> I[Receipt Generation]
+    I --> J[Exam Access Granted]
+    C --> J
+    H --> A
+    
+    style A fill:#667eea,stroke:#333,stroke-width:2px,color:#fff
+    style D fill:#f6ad55,stroke:#333,stroke-width:2px,color:#fff
+    style G fill:#48bb78,stroke:#333,stroke-width:2px,color:#fff
+    style J fill:#9f7aea,stroke:#333,stroke-width:2px,color:#fff
+    style H fill:#fc8181,stroke:#333,stroke-width:2px
+            </div>
+        </div>
+
+        <!-- Notes Management -->
+        <div class="feature-section">
+            <h2 class="text-3xl font-bold text-gray-800 mb-4 border-l-4 border-purple-600 pl-4">9. Notes Management</h2>
+            <div class="space-y-2">
+                <div class="feature-item">
+                    <span class="font-semibold text-gray-800">File upload system</span>
+                    <span class="text-gray-600"> - Support for PDF, PPT, DOC, and DOCX formats</span>
+                </div>
+                <div class="feature-item">
+                    <span class="font-semibold text-gray-800">Subject-wise organization</span>
+                    <span class="text-gray-600"> - Categorized storage for easy navigation</span>
+                </div>
+                <div class="feature-item">
+                    <span class="font-semibold text-gray-800">Professor note uploads</span>
+                    <span class="text-gray-600"> - Faculty can share study materials directly</span>
+                </div>
+                <div class="feature-item">
+                    <span class="font-semibold text-gray-800">Student note access and downloads</span>
+                    <span class="text-gray-600"> - Seamless retrieval of educational resources</span>
+                </div>
+                <div class="feature-item">
+                    <span class="font-semibold text-gray-800">File storage and retrieval</span>
+                    <span class="text-gray-600"> - Cloud-based storage (AWS S3 or equivalent)</span>
+                </div>
+                <div class="feature-item">
+                    <span class="font-semibold text-gray-800">Basic search functionality</span>
+                    <span class="text-gray-600"> - Quick search by subject, topic, or professor</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Approval Workflows -->
+        <div class="feature-section">
+            <h2 class="text-3xl font-bold text-gray-800 mb-4 border-l-4 border-purple-600 pl-4">10. Approval Workflows</h2>
+            <div class="space-y-2">
+                <div class="feature-item">
+                    <span class="font-semibold text-gray-800">Student registration approval</span>
+                    <span class="text-gray-600"> - Coordinator-level verification process</span>
+                </div>
+                <div class="feature-item">
+                    <span class="font-semibold text-gray-800">Professor registration approval</span>
+                    <span class="text-gray-600"> - Principal-level faculty onboarding</span>
+                </div>
+                <div class="feature-item">
+                    <span class="font-semibold text-gray-800">Coordinator approval system</span>
+                    <span class="text-gray-600"> - HOD-level coordinator verification</span>
+                </div>
+                <div class="feature-item">
+                    <span class="font-semibold text-gray-800">Approval dashboard</span>
+                    <span class="text-gray-600"> - Dedicated interface for each approving role</span>
+                </div>
+                <div class="feature-item">
+                    <span class="font-semibold text-gray-800">Rejection feedback mechanisms</span>
+                    <span class="text-gray-600"> - Detailed reasons for application denials</span>
+                </div>
+                <div class="feature-item">
+                    <span class="font-semibold text-gray-800">Document verification tracking</span>
+                    <span class="text-gray-600"> - Audit trail for all submitted credentials</span>
+                </div>
+                <div class="feature-item">
+                    <span class="font-semibold text-gray-800">Approval history and audit logs</span>
+                    <span class="text-gray-600"> - Complete historical record of all decisions</span>
+                </div>
+                <div class="feature-item">
+                    <span class="font-semibold text-gray-800">Bulk approval processing</span>
+                    <span class="text-gray-600"> - Efficient handling of multiple applications</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Complete System Flow -->
+        <div class="feature-section">
+            <h2 class="text-3xl font-bold text-gray-800 mb-4 border-l-4 border-purple-600 pl-4">Complete System Data Flow</h2>
+            <div class="mermaid">
+graph TB
+    subgraph Frontend
+        A[Web Application]
+        B[Student Interface]
+        C[Professor Interface]
+        D[Admin Interfaces]
+    end
+    
+    subgraph Backend
+        E[API Gateway]
+        F[Authentication Service]
+        G[Exam Engine]
+        H[Payment Service]
+        I[Notes Service]
+        J[Analytics Service]
+    end
+    
+    subgraph Database
+        K[(User Database)]
+        L[(Exam Database)]
+        M[(Transaction DB)]
+        N[(Files Storage)]
+    end
+    
+    subgraph External
+        O[Razorpay Gateway]
+        P[Email/SMS Service]
+        Q[Cloud Storage S3]
+    end
+    
+    A --> E
+    B --> E
+    C --> E
+    D --> E
+    
+    E --> F
+    E --> G
+    E --> H
+    E --> I
+    E --> J
+    
+    F --> K
+    G --> L
+    H --> M
+    I --> N
+    
+    H --> O
+    F --> P
+    I --> Q
+    
+    style A fill:#667eea,stroke:#333,stroke-width:2px,color:#fff
+    style E fill:#48bb78,stroke:#333,stroke-width:2px,color:#fff
+    style K fill:#f6ad55,stroke:#333,stroke-width:2px
+    style L fill:#f6ad55,stroke:#333,stroke-width:2px
+    style M fill:#f6ad55,stroke:#333,stroke-width:2px
+    style N fill:#f6ad55,stroke:#333,stroke-width:2px
+            </div>
+        </div>
+
+        <!-- Technical Stack -->
+        <div class="feature-section">
+            <h2 class="text-3xl font-bold text-gray-800 mb-4 border-l-4 border-purple-600 pl-4">Technology Stack</h2>
+            <div class="grid grid-cols-2 gap-4">
+                <div>
+                    <h4 class="font-bold text-gray-800 mb-2">Frontend</h4>
+                    <ul class="list-disc list-inside text-gray-700 space-y-1">
+                        <li>React.js with TypeScript</li>
+                        <li>Tailwind CSS for styling</li>
+                        <li>Redux for state management</li>
+                        <li>Socket.io for real-time features</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold text-gray-800 mb-2">Backend</h4>
+                    <ul class="list-disc list-inside text-gray-700 space-y-1">
+                        <li>Node.js with Express.js</li>
+                        <li>JWT for authentication</li>
+                        <li>RESTful API architecture</li>
+                        <li>WebSocket support</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold text-gray-800 mb-2">Database</h4>
+                    <ul class="list-disc list-inside text-gray-700 space-y-1">
+                        <li>PostgreSQL (primary database)</li>
+                        <li>Redis (caching)</li>
+                        <li>MongoDB (analytics logs)</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold text-gray-800 mb-2">External Services</h4>
+                    <ul class="list-disc list-inside text-gray-700 space-y-1">
+                        <li>Razorpay Payment Gateway</li>
+                        <li>AWS S3 for file storage</li>
+                        <li>SendGrid for emails</li>
+                        <li>Twilio for SMS</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Key Benefits -->
+        <div class="feature-section">
+            <h2 class="text-3xl font-bold text-gray-800 mb-4 border-l-4 border-purple-600 pl-4">Key Benefits</h2>
+            <div class="grid grid-cols-2 gap-4">
+                <div class="bg-purple-50 p-4 rounded-lg">
+                    <h4 class="font-bold text-purple-800 mb-2">🎓 For Students</h4>
+                    <ul class="text-gray-700 space-y-1 text-sm">
+                        <li>• Professional exam experience</li>
+                        <li>• Instant result access</li>
+                        <li>• Secure payment options</li>
+                        <li>• 24/7 notes availability</li>
+                    </ul>
+                </div>
+                <div class="bg-blue-50 p-4 rounded-lg">
+                    <h4 class="font-bold text-blue-800 mb-2">👨‍🏫 For Professors</h4>
+                    <ul class="text-gray-700 space-y-1 text-sm">
+                        <li>• Easy exam creation</li>
+                        <li>• Automated evaluation</li>
+                        <li>• Analytics and insights</li>
+                        <li>• Resource sharing</li>
+                    </ul>
+                </div>
+                <div class="bg-green-50 p-4 rounded-lg">
+                    <h4 class="font-bold text-green-800 mb-2">🏛️ For Institution</h4>
+                    <ul class="text-gray-700 space-y-1 text-sm">
+                        <li>• Complete transparency</li>
+                        <li>• Reduced operational costs</li>
+                        <li>• Enhanced security</li>
+                        <li>• Scalable infrastructure</li>
+                    </ul>
+                </div>
+                <div class="bg-orange-50 p-4 rounded-lg">
+                    <h4 class="font-bold text-orange-800 mb-2">📊 For Administration</h4>
+                    <ul class="text-gray-700 space-y-1 text-sm">
+                        <li>• Real-time monitoring</li>
+                        <li>• Comprehensive reports</li>
+                        <li>• User management</li>
+                        <li>• Audit trails</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Conclusion -->
+        <div class="feature-section">
+            <h2 class="text-3xl font-bold text-gray-800 mb-4 border-l-4 border-purple-600 pl-4">Conclusion</h2>
+            <p class="text-gray-700 leading-relaxed">
+                The Student Exam Management System represents a comprehensive solution to modernize educational assessment processes. By integrating multiple stakeholder roles, secure payment processing, robust exam conduction capabilities, and efficient approval workflows, the system delivers a complete end-to-end examination platform. Built on modern technology stacks and incorporating industry best practices for security and scalability, this system is designed to serve educational institutions of all sizes, from small colleges to large universities.
+            </p>
+        </div>
+
+        <!-- Footer -->
+        <div class="mt-12 pt-6 border-t-2 border-gray-300 text-center text-gray-600 text-sm">
+            <p class="font-semibold">Student Exam Management System</p>
+            <p>Comprehensive Project Documentation</p>
+            <p class="mt-2">© 2026 - All Rights Reserved</p>
+        </div>
+    </div>
+
+    <script>
+        // Initialize Mermaid
+        mermaid.initialize({ 
+            startOnLoad: true,
+            theme: 'default',
+            securityLevel: 'loose'
+        });
+
+        // Set current date
+        document.getElementById('currentDate').textContent = new Date().toLocaleDateString('en-US', { 
+            year: 'numeric', 
+            month: 'long', 
+            day: 'numeric' 
+        });
+
+        // PDF Download Function
+        async function downloadPDF() {
+            const element = document.getElementById('printArea');
+            const button = event.target.closest('button');
+            const originalText = button.innerHTML;
+            
+            // Show loading message
+            button.innerHTML = '<svg class="animate-spin inline w-5 h-5 mr-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg>Generating PDF...';
+            button.disabled = true;
+
+            try {
+                // First, render mermaid diagrams to SVG
+                await mermaid.run();
+                
+                // Get the height of the content
+                const contentHeight = element.scrollHeight;
+                const contentWidth = element.scrollWidth;
+                
+                // Calculate page height in mm (A4 width is 210mm, maintaining aspect ratio)
+                const pageWidth = 210;
+                const pageHeight = Math.ceil((contentHeight * pageWidth) / contentWidth) + 20;
+                
+                const opt = {
+                    margin: [10, 10, 10, 10],
+                    filename: 'Student_Exam_Management_System_Project_Document.pdf',
+                    image: { 
+                        type: 'jpeg', 
+                        quality: 0.95 
+                    },
+                    html2canvas: { 
+                        scale: 2,
+                        useCORS: true,
+                        logging: false,
+                        letterRendering: true,
+                        allowTaint: true,
+                        scrollY: 0,
+                        scrollX: 0,
+                        windowHeight: contentHeight,
+                        windowWidth: contentWidth
+                    },
+                    jsPDF: { 
+                        unit: 'mm', 
+                        format: [pageWidth, pageHeight], 
+                        orientation: 'portrait',
+                        compress: true
+                    },
+                    pagebreak: { 
+                        mode: 'avoid-all'
+                    }
+                };
+
+                // Generate PDF
+                await html2pdf().set(opt).from(element).save();
+                
+                button.innerHTML = originalText;
+                button.disabled = false;
+            } catch (error) {
+                console.error('PDF generation error:', error);
+                button.innerHTML = originalText;
+                button.disabled = false;
+                alert('Error generating PDF. Please try again.');
+            }
+        }
+    </script>
+</body>
+</html>

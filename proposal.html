@@ -1,0 +1,967 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Exam & Learning Management System - Project Proposal</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/10.6.1/mermaid.min.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap');
+        
+        * {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        
+        .gradient-text {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .nav-btn {
+            transition: all 0.3s ease;
+        }
+        
+        .nav-btn:hover {
+            transform: scale(1.05);
+        }
+        
+        .mermaid {
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            margin: 20px 0;
+            display: flex;
+            justify-content: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        
+        .section-header {
+            font-size: 36px;
+            font-weight: 700;
+            margin-bottom: 24px;
+            text-align: center;
+        }
+        
+        .sub-section-header {
+            font-size: 24px;
+            font-weight: 600;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #e2e8f0;
+        }
+        
+        .feature-item {
+            background: #f8f9ff;
+            border-left: 4px solid #667eea;
+            padding: 15px 20px;
+            border-radius: 8px;
+            margin-bottom: 10px;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+        }
+        
+        .download-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 12px 24px;
+            background: linear-gradient(135deg, #4CAF50 0%, #2ecc71 100%);
+            color: white;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            box-shadow: 0 4px 10px rgba(0, 128, 0, 0.2);
+        }
+        
+        .download-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(0, 128, 0, 0.3);
+        }
+        
+        .flowchart-container {
+            margin-top: 40px;
+            padding: 30px;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+        }
+        
+        .flowchart-title {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid #667eea;
+            text-align: center;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="gradient-bg text-white py-4 px-6 fixed w-full z-50 shadow-lg">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <h1 class="text-2xl font-bold">Smart ERP - Project Proposal</h1>
+            <div class="space-x-4">
+                <a href="index.html" class="nav-btn px-4 py-2 rounded-lg hover:bg-white hover:bg-opacity-20">Home</a>
+                <a href="flowcharts.html" class="nav-btn px-4 py-2 rounded-lg hover:bg-white hover:bg-opacity-20">Flowcharts</a>
+                <a href="project-document.html" class="nav-btn px-4 py-2 rounded-lg hover:bg-white hover:bg-opacity-20">Project Doc</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="gradient-bg text-white py-20 px-6 pt-32">
+        <div class="max-w-7xl mx-auto text-center">
+            <h1 class="text-5xl font-bold mb-6">Comprehensive Project Proposal</h1>
+            <p class="text-xl opacity-90">Smart Exam & Learning Management System</p>
+            <p class="text-lg mt-4 opacity-80">Empowering education with AI-driven efficiency and personalized learning</p>
+        </div>
+    </section>
+
+    <!-- Project Features Summary -->
+    <section id="features-summary" class="py-16 px-6 bg-white">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="section-header gradient-text">Key Project Features</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-8">
+                <div>
+                    <h3 class="sub-section-header">Authentication & User Management</h3>
+                    <ul class="space-y-2">
+                        <li class="feature-item">• Multi-role authentication system (Student, Professor, Coordinator, HOD, Principal)</li>
+                        <li class="feature-item">• JWT-based secure login with session management</li>
+                        <li class="feature-item">• Multi-factor authentication (2FA) support</li>
+                        <li class="feature-item">• Role-based access control (RBAC)</li>
+                        <li class="feature-item">• User role hierarchy implementation</li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="sub-section-header">Core Exam Engine</h3>
+                    <ul class="space-y-2">
+                        <li class="feature-item">• Exam creation interface for professors</li>
+                        <li class="feature-item">• Question bank management (MCQ)</li>
+                        <li class="feature-item">• Exam scheduling and duration settings</li>
+                        <li class="feature-item">• Exam conduction interface (similar to JEE/NEET)</li>
+                        <li class="feature-item">• Timer functionality with auto-submit</li>
+                        <li class="feature-item">• Question navigation panel</li>
+                        <li class="feature-item">• Answer recording and auto-save mechanism</li>
+                        <li class="feature-item">• Exam submission and summary window</li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="sub-section-header">Student Portal</h3>
+                    <ul class="space-y-2">
+                        <li class="feature-item">• Student registration workflow</li>
+                        <li class="feature-item">• Class coordinator approval system</li>
+                        <li class="feature-item">• Dashboard with exam listings</li>
+                        <li class="feature-item">• Exam enrollment functionality</li>
+                        <li class="feature-item">• Exam status tracking (Upcoming, Ongoing, Past)</li>
+                        <li class="feature-item">• Results display (basic)</li>
+                        <li class="feature-item">• Score and marks breakdown</li>
+                        <li class="feature-item">• Result download in PDF format</li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="sub-section-header">Professor Portal Basics</h3>
+                    <ul class="space-y-2">
+                        <li class="feature-item">• Professor registration and approval workflow</li>
+                        <li class="feature-item">• Dashboard with exam creation interface</li>
+                        <li class="feature-item">• Basic exam creation (manual entry)</li>
+                        <li class="feature-item">• Question management and storage</li>
+                        <li class="feature-item">• Exam scheduling and publish</li>
+                        <li class="feature-item">• Notes upload and organization</li>
+                        <li class="feature-item">• View enrolled students list</li>
+                        <li class="feature-item">• Basic result viewing and download</li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="sub-section-header">Coordinator Portal Basics</h3>
+                    <ul class="space-y-2">
+                        <li class="feature-item">• Coordinator registration and approval workflow</li>
+                        <li class="feature-item">• Dashboard with class management interface</li>
+                        <li class="feature-item">• Student registration approval system</li>
+                        <li class="feature-item">• View and manage class students list</li>
+                        <li class="feature-item">• Basic class analytics (enrollment, participation)</li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="sub-section-header">HOD Portal Basics</h3>
+                    <ul class="space-y-2">
+                        <li class="feature-item">• HOD registration and approval workflow</li>
+                        <li class="feature-item">• Dashboard with department overview</li>
+                        <li class="feature-item">• Coordinator registration approval system</li>
+                        <li class="feature-item">• View all coordinators and classes in department</li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="sub-section-header">Principal Portal Basics</h3>
+                    <ul class="space-y-2">
+                        <li class="feature-item">• Principal login and dashboard initialization</li>
+                        <li class="feature-item">• HOD registration approval system</li>
+                        <li class="feature-item">• Professor registration approval interface</li>
+                        <li class="feature-item">• View all HODs and their departments</li>
+                        <li class="feature-item">• College-wide user management</li>
+                        <li class="feature-item">• Overall system statistics and monitoring</li>
+                        <li class="feature-item">• Approval/rejection of HODs and Professors</li>
+                        <li class="feature-item">• System health and activity monitoring</li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="sub-section-header">Payment Integration</h3>
+                    <ul class="space-y-2">
+                        <li class="feature-item">• Razorpay gateway integration</li>
+                        <li class="feature-item">• Multiple payment methods (UPI, Card, Net Banking, Wallet)</li>
+                        <li class="feature-item">• Exam pricing configuration (₹0 to ₹10,000)</li>
+                        <li class="feature-item">• Payment status tracking</li>
+                        <li class="feature-item">• Transaction logging</li>
+                        <li class="feature-item">• Payment confirmation and receipts</li>
+                        <li class="feature-item">• Exam access control post-payment</li>
+                        <li class="feature-item">• Refund processing system</li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="sub-section-header">Notes Management</h3>
+                    <ul class="space-y-2">
+                        <li class="feature-item">• File upload system (PDF, PPT, DOC formats)</li>
+                        <li class="feature-item">• Subject-wise organization</li>
+                        <li class="feature-item">• Professor note uploads</li>
+                        <li class="feature-item">• Student note access and downloads</li>
+                        <li class="feature-item">• File storage and retrieval (S3/Cloud)</li>
+                        <li class="feature-item">• Basic search functionality</li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="sub-section-header">Approval Workflows</h3>
+                    <ul class="space-y-2">
+                        <li class="feature-item">• Student registration approval (Coordinator)</li>
+                        <li class="feature-item">• Professor registration approval (Principal)</li>
+                        <li class="feature-item">• Coordinator approval system (HOD)</li>
+                        <li class="feature-item">• Approval dashboard for each role</li>
+                        <li class="feature-item">• Rejection feedback mechanisms</li>
+                        <li class="feature-item">• Document verification tracking</li>
+                        <li class="feature-item">• Approval history and audit logs</li>
+                        <li class="feature-item">• Bulk approval processing</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Download Section -->
+    <section id="downloads" class="py-16 px-6 bg-gray-100 text-center">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="section-header gradient-text">Download Project Documentation</h2>
+            <p class="text-lg text-gray-700 mb-8">Access detailed project documents and presentations for a deeper understanding of our system.</p>
+            <div class="flex flex-col sm:flex-row justify-center gap-6">
+                <a href="#" class="download-button">
+                    <svg class="w-6 h-6 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H5a2 2 0 01-2-2V7a2 2 0 012-2h14a2 2 0 012 2v11a2 2 0 01-2 2z"></path></svg>
+                    Download Project Document (PDF)
+                </a>
+                <a href="#" class="download-button">
+                    <svg class="w-6 h-6 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H5a2 2 0 01-2-2V7a2 2 0 012-2h14a2 2 0 012 2v11a2 2 0 01-2 2z"></path></svg>
+                    Download Project Presentation (PPT)
+                </a>
+            </div>
+            <p class="text-sm text-gray-500 mt-4"><em>(Links are placeholders and will be updated with actual files)</em></p>
+        </div>
+    </section>
+
+    <!-- Selected Flowcharts Section -->
+    <section id="selected-flowcharts" class="py-16 px-6 bg-white">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="section-header gradient-text">Selected Workflow Flowcharts</h2>
+
+            <div class="flowchart-container">
+                <h3 class="flowchart-title">1. Overall System Architecture Flow</h3>
+                <div class="mermaid">
+graph TB
+    Start([System Entry]) --> Login{User Login}
+    Login --> Student[Student Portal]
+    Login --> Professor[Professor Portal]
+    Login --> Coordinator[Class Coordinator Portal]
+    Login --> HOD[HOD Portal]
+    Login --> Principal[Principal Portal]
+    
+    Student --> S1[Registration & Approval]
+    Student --> S2[Exam Management]
+    Student --> S3[Notes Access]
+    Student --> S4[Results & Analytics]
+    Student --> S5[AI Assistant]
+    
+    Professor --> P1[Create Exams]
+    Professor --> P2[Upload Notes]
+    Professor --> P3[View Analytics]
+    Professor --> P4[Financial Dashboard]
+    Professor --> P5[AI Insights]
+    
+    Coordinator --> C1[Approve Students]
+    Coordinator --> C2[Assign Professors]
+    Coordinator --> C3[Class Analytics]
+    Coordinator --> C4[Attendance Management]
+    Coordinator --> C5[AI Recommendations]
+    
+    HOD --> H1[Approve Coordinators]
+    HOD --> H2[Department Analytics]
+    HOD --> H3[Parent Interface]
+    HOD --> H4[Resource Management]
+    HOD --> H5[AI Strategic Insights]
+    
+    Principal --> PR1[Approve HOD & Professors]
+    Principal --> PR2[College-wide Analytics]
+    Principal --> PR3[Strategic Planning]
+    Principal --> PR4[Stakeholder Management]
+    Principal --> PR5[AI Executive Assistant]
+    
+    style Start fill:#667eea,stroke:#333,stroke-width:3px,color:#fff
+    style Student fill:#4CAF50,stroke:#333,stroke-width:2px,color:#fff
+    style Professor fill:#2196F3,stroke:#333,stroke-width:2px,color:#fff
+    style Coordinator fill:#FF9800,stroke:#333,stroke-width:2px,color:#fff
+    style HOD fill:#9C27B0,stroke:#333,stroke-width:2px,color:#fff
+    style Principal fill:#F44336,stroke:#333,stroke-width:2px,color:#fff
+                </div>
+            </div>
+
+            <div class="flowchart-container">
+                <h3 class="flowchart-title">2. Student Complete Flow</h3>
+                <div class="mermaid">
+graph TD
+    A[Student Registration] --> B{Class Coordinator Approval}
+    B -->|Approved| C[Account Activated]
+    B -->|Rejected| D[Resubmit with Changes]
+    D --> A
+    
+    C --> E[Student Dashboard]
+    
+    E --> F[Upcoming Exams Tab]
+    E --> G[Ongoing Exams Tab]
+    E --> H[Past Results Tab]
+    E --> I[Notes Section]
+    E --> J[AI Chat Assistant]
+    
+    F --> F1[Browse Available Exams]
+    F1 --> F2[View Exam Details]
+    F2 --> F3[Subject/Topic/Date/Time/Price]
+    F3 --> F4{Paid Exam?}
+    F4 -->|Yes| F5[Payment Gateway]
+    F4 -->|No| F7[Direct Enrollment]
+    F5 --> F6[Razorpay Integration]
+    F6 --> F7[Enrollment Confirmed]
+    F7 --> F8[Notification Sent]
+    F7 --> F9[Exam Timer Reminders]
+    
+    G --> G1[Active Exam Window]
+    G1 --> G2[JEE/NEET Interface]
+    G2 --> G3[Question Navigation Panel]
+    G2 --> G4[Timer Display]
+    G2 --> G5[Mark for Review]
+    G2 --> G6[Submit Button]
+    
+    G3 --> G7[Answered Questions]
+    G3 --> G8[Not Answered]
+    G3 --> G9[Marked for Review]
+    G3 --> G10[Not Visited]
+    
+    G6 --> G11{Auto-save Enabled}
+    G11 -->|After Each Question| G12[Server Storage]
+    G11 -->|Internet Lost| G13[Local Cache]
+    G13 --> G14[Auto-sync on Reconnect]
+    
+    G4 --> G15{Time Expired?}
+    G15 -->|Yes| G16[Auto Submit]
+    G15 -->|No| G6
+    
+    G16 --> G17[Summary Window]
+    G6 --> G17
+    G17 --> G18[Final Submission]
+    
+    G18 --> G19{Result Display Mode}
+    G19 -->|Immediate| G20[Show Result Now]
+    G19 -->|Scheduled| G21[Wait for Professor Release]
+    
+    G20 --> G22[Detailed Analysis]
+    G21 --> G22
+    
+    G22 --> G23[Score Breakdown]
+    G22 --> G24[Topic-wise Analysis]
+    G22 --> G25[Time Spent per Question]
+    G22 --> G26[Accuracy Percentage]
+    G22 --> G27[Percentile Ranking]
+    G22 --> G28[Strong vs Weak Areas]
+    G22 --> G29[Comparison with Class Avg]
+    
+    H --> H1[View All Past Exams]
+    H1 --> H2[Filter by Subject/Date/Score]
+    H2 --> H3[Detailed Result View]
+    H3 --> H4[Performance Trends Graph]
+    H4 --> H5[Download PDF Report]
+    
+    I --> I1[Subject-wise Notes]
+    I1 --> I2[View Notes]
+    I1 --> I3[Download Notes]
+    I1 --> I4[Search within Notes]
+    I1 --> I5[Bookmark Pages]
+    
+    J --> J1[Ask About Wrong Answers]
+    J --> J2[Request Study Recommendations]
+    J --> J3[Clarify Concepts]
+    J --> J4[Get Practice Questions]
+    J --> J5[Ask for Performance Analysis]
+    J1 --> J6[Voice/Text Response]
+    J2 --> J6
+    J3 --> J6
+    J4 --> J6
+    J5 --> J6
+    
+    style A fill:#4CAF50,stroke:#333,stroke-width:3px,color:#fff
+    style G2 fill:#FF5722,stroke:#333,stroke-width:3px,color:#fff
+    style G22 fill:#2196F3,stroke:#333,stroke-width:3px,color:#fff
+    style J fill:#9C27B0,stroke:#333,stroke-width:3px,color:#fff
+                </div>
+            </div>
+
+            <div class="flowchart-container">
+                <h3 class="flowchart-title">3. Professor Complete Flow</h3>
+                <div class="mermaid">
+graph TD
+    A[Professor Registration] --> B{Principal Approval}
+    B -->|Approved| C[Account Activated]
+    B -->|Rejected| D[Resubmit Application]
+    D --> A
+    
+    C --> E[Professor Dashboard]
+    
+    E --> F[Create New Exam]
+    E --> G[Upload Notes]
+    E --> H[View Analytics]
+    E --> I[Financial Dashboard]
+    E --> J[AI Assistant]
+    E --> K[Manage Past Exams]
+    
+    F --> F1{Input Method}
+    F1 -->|Manual Entry| F2[Question Builder Interface]
+    F1 -->|Bulk Upload| F3[Download Excel Template]
+    
+    F3 --> F4[Fill Template]
+    F4 --> F5[Columns: Question/Options/Answer/Marks]
+    F5 --> F6[Upload .xlsx/.csv File]
+    F6 --> F7[Auto Validation]
+    F7 --> F8{Errors Found?}
+    F8 -->|Yes| F9[Show Error Report]
+    F9 --> F4
+    F8 -->|No| F10[Questions Imported]
+    
+    F2 --> F10
+    F10 --> F11[Question Preview]
+    F11 --> F12[Edit Interface]
+    F12 --> F13[Add Images/Diagrams]
+    F12 --> F14[Set Marks per Question]
+    F12 --> F15[Set Difficulty Level]
+    F12 --> F16[Add Topic Tags]
+    F12 --> F17[Enable Negative Marking]
+    
+    F13 --> F18[Configure Exam Settings]
+    F14 --> F18
+    F15 --> F18
+    F16 --> F18
+    F17 --> F18
+    
+    F18 --> F19[Set Price ₹0-₹10000]
+    F18 --> F20[Select Date & Time]
+    F18 --> F21[Set Duration]
+    F18 --> F22[Choose Result Display Mode]
+    
+    F22 --> F23{Display Mode}
+    F23 -->|Immediate| F24[Show After Submit]
+    F23 -->|Scheduled| F25[Set Release Date/Time]
+    F23 -->|Manual| F26[Release Manually]
+    
+    F19 --> F27[Preview Complete Exam]
+    F20 --> F27
+    F21 --> F27
+    F24 --> F27
+    F25 --> F27
+    F26 --> F27
+    
+    F27 --> F28{Publish Exam?}
+    F28 -->|Yes| F29[Exam Published]
+    F28 -->|Edit| F12
+    
+    F29 --> F30[Student Notifications Sent]
+    F30 --> F31[Email/SMS/Push Alerts]
+    
+    K --> K1[View Published Exams]
+    K1 --> K2[Edit Exam]
+    K2 --> K3[Update Questions]
+    K2 --> K4[Change Timing]
+    K2 --> K5[Update Price]
+    K2 --> K6[Modify Instructions]
+    
+    K3 --> K7[Save Changes]
+    K4 --> K7
+    K5 --> K7
+    K6 --> K7
+    K7 --> K8[Notify Enrolled Students]
+    
+    G --> G1[Select Subject/Topic]
+    G1 --> G2[Upload Files PDF/PPT/DOC]
+    G2 --> G3[Add Description]
+    G3 --> G4[Set Access Level]
+    G4 --> G5[Publish Notes]
+    G5 --> G6[Students Notified]
+    
+    H --> H1[Overall Performance Dashboard]
+    H1 --> H2[Class Average Scores]
+    H1 --> H3[Enrollment vs Completion]
+    H1 --> H4[Subject-wise Analytics]
+    H1 --> H5[Exam Difficulty Analysis]
+    H1 --> H6[Student Engagement Metrics]
+    
+    H --> H7[Individual Student View]
+    H7 --> H8[Complete Profile]
+    H8 --> H9[All Exams History]
+    H8 --> H10[Progress Trajectory]
+    H8 --> H11[Payment History]
+    H8 --> H12[Strong/Weak Topics]
+    
+    H --> H13[Question Analysis]
+    H13 --> H14[Which Questions Failed Most]
+    H14 --> H15[Difficulty vs Success Rate]
+    H15 --> H16[Time Spent Analysis]
+    
+    I --> I1[Total Earnings]
+    I1 --> I2[Exam-wise Revenue]
+    I1 --> I3[Monthly/Yearly Reports]
+    I1 --> I4[Payment Status Tracking]
+    I1 --> I5[Pending Payments]
+    I1 --> I6[Transaction History]
+    I1 --> I7[Export Financial Data]
+    
+    J --> J1[Voice/Text Queries]
+    J1 --> J2["Show last exam results"]
+    J1 --> J3["Which students struggling?"]
+    J1 --> J4["What's my total earnings?"]
+    J1 --> J5["Show enrollment trends"]
+    J1 --> J6["Which questions hardest?"]
+    
+    J2 --> J7[AI Generated Insights]
+    J3 --> J7
+    J4 --> J7
+    J5 --> J7
+    J6 --> J7
+    
+    J7 --> J8[Recommendations]
+    J8 --> J9[Students Need Attention]
+    J8 --> J10[Topics to Re-teach]
+    J8 --> J11[Optimal Exam Timing]
+    J8 --> J12[Pricing Optimization]
+    
+    style A fill:#2196F3,stroke:#333,stroke-width:3px,color:#fff
+    style F fill:#FF9800,stroke:#333,stroke-width:3px,color:#fff
+    style H fill:#4CAF50,stroke:#333,stroke-width:3px,color:#fff
+    style J fill:#9C27B0,stroke:#333,stroke-width:3px,color:#fff
+                </div>
+            </div>
+
+            <div class="flowchart-container">
+                <h3 class="flowchart-title">7. Exam Conduction Detailed Flow</h3>
+                <div class="mermaid">
+graph TD
+    A[Student Enrolls in Exam] --> B{Payment Required?}
+    B -->|Yes| C[Razorpay Payment Gateway]
+    B -->|No| D[Direct Enrollment]
+    
+    C --> C1[Select Payment Method]
+    C1 --> C2[UPI/Card/Net Banking/Wallet]
+    C2 --> C3[Process Payment]
+    C3 --> C4{Payment Success?}
+    C4 -->|Yes| D
+    C4 -->|No| C5[Retry/Cancel]
+    C5 --> C1
+    
+    D --> E[Enrollment Confirmed]
+    E --> F[Send Notifications]
+    F --> F1[Email Confirmation]
+    F --> F2[SMS Alert]
+    F --> F3[Push Notification]
+    
+    F --> G[Reminder System]
+    G --> G1[1 Day Before: Reminder]
+    G --> G2[1 Hour Before: Alert]
+    G --> G3[15 Min Before: Final Alert]
+    
+    G3 --> H[Exam Start Time]
+    H --> I{Student Joins?}
+    I -->|Yes| J[Exam Window Opens]
+    I -->|Late| K[Grace Period Check]
+    K --> J
+    
+    J --> L[JEE/NEET Interface Loads]
+    L --> M[Question Navigation Panel]
+    L --> N[Timer Display]
+    L --> O[Instructions Screen]
+    
+    O --> P[Accept Terms]
+    P --> Q[Exam Begins]
+    
+    Q --> R[Question Display]
+    R --> S[Multiple Choice Options]
+    R --> T[Numerical Input]
+    R --> U[Multi-Select]
+    
+    S --> V[Answer Selection]
+    T --> V
+    U --> V
+    
+    V --> W[Action Buttons]
+    W --> X[Save & Next]
+    W --> Y[Mark for Review]
+    W --> Z[Clear Response]
+    
+    X --> AA[Auto-save Triggered]
+    Y --> AA
+    Z --> AA
+    
+    AA --> AB{Internet Connected?}
+    AB -->|Yes| AC[Save to Server]
+    AB -->|No| AD[Save to Local Cache]
+    
+    AD --> AE[Connection Monitor]
+    AE --> AF{Reconnected?}
+    AF -->|Yes| AG[Sync Local to Server]
+    AF -->|No| AE
+    
+    AG --> AC
+    
+    AC --> AH[Update Question Status]
+    AH --> AI[Answered - Green]
+    AH --> AJ[Not Answered - Red]
+    AH --> AK[Marked Review - Orange]
+    AH --> AL[Not Visited - Gray]
+    
+    M --> AM[Question Palette]
+    AM --> AI
+    AM --> AJ
+    AM --> AK
+    AM --> AL
+    
+    AM --> AN[Click Any Question]
+    AN --> R
+    
+    N --> AO[Timer Countdown]
+    AO --> AP{Time Remaining?}
+    AP -->|Yes| AO
+    AP -->|No| AQ[Auto-Submit Triggered]
+    
+    W --> AR[Submit Exam Button]
+    AR --> AS[Confirmation Dialog]
+    AS --> AT[Summary Window]
+    
+    AT --> AU[Show Statistics]
+    AU --> AV[Total Questions]
+    AU --> AW[Answered]
+    AU --> AX[Not Answered]
+    AU --> AY[Marked for Review]
+    
+    AT --> AZ{Confirm Submit?}
+    AZ -->|Yes| BA[Final Submission]
+    AZ -->|No| R
+    
+    AQ --> BA
+    
+    BA --> BB[Server Processing]
+    BB --> BC[Calculate Score]
+    BC --> BD[Generate Analytics]
+    
+    BD --> BE{Result Display Mode}
+    BE -->|Immediate| BF[Show Result Now]
+    BE -->|Scheduled| BG[Wait for Release Time]
+    BE -->|Manual| BH[Wait for Prof Release]
+    
+    BF --> BI[Result Dashboard]
+    BG --> BI
+    BH --> BI
+    
+    BI --> BJ[Score Display]
+    BJ --> BK[Total Marks]
+    BJ --> BL[Percentage]
+    BJ --> BM[Percentile Rank]
+    
+    BI --> BN[Detailed Analytics]
+    BN --> BO[Question-wise Breakdown]
+    BN --> BP[Correct/Incorrect/Unattempted]
+    BN --> BQ[Time Spent per Question]
+    BN --> BR[Topic-wise Analysis]
+    BN --> BS[Difficulty-wise Performance]
+    BN --> BT[Comparison with Class Avg]
+    
+    BI --> BU[Performance Insights]
+    BU --> BV[Strong Areas]
+    BU --> BW[Weak Areas]
+    BU --> BX[Recommended Study Topics]
+    BU --> BY[Improvement Suggestions]
+    
+    BI --> BZ[Download Options]
+    BZ --> CA[PDF Report]
+    BZ --> CB[Detailed Analysis]
+    BZ --> CC[Answer Key]
+    
+    style A fill:#4CAF50,stroke:#333,stroke-width:3px,color:#fff
+    style L fill:#FF5722,stroke:#333,stroke-width:3px,color:#fff
+    style AA fill:#2196F3,stroke:#333,stroke-width:3px,color:#fff
+    style BA fill:#9C27B0,stroke:#333,stroke-width:3px,color:#fff
+    style BI fill:#FF9800,stroke:#333,stroke-width:3px,color:#fff
+                </div>
+            </div>
+
+            <div class="flowchart-container">
+                <h3 class="flowchart-title">9. AI Features Integration Flow</h3>
+                <div class="mermaid">
+graph TD
+    A[AI System] --> B[Student AI Assistant]
+    A --> C[Professor AI Insights]
+    A --> D[Coordinator AI Analytics]
+    A --> E[HOD AI Strategy]
+    A --> F[Principal AI Executive]
+    
+    B --> B1[Voice/Text Input]
+    B1 --> B2["Where did I go wrong?"]
+    B1 --> B3["What should I study?"]
+    B1 --> B4["Explain this concept"]
+    B1 --> B5["Give me practice questions"]
+    
+    B2 --> B6[Analyze Exam Results]
+    B6 --> B7[Identify Wrong Answers]
+    B7 --> B8[Explain Correct Answer]
+    B7 --> B9[Show Concept Gap]
+    B7 --> B10[Recommend Resources]
+    
+    B3 --> B11[Performance Analysis]
+    B11 --> B12[Weak Topics Identification]
+    B12 --> B13[Study Plan Generation]
+    B13 --> B14[Time Allocation]
+    B13 --> B15[Resource Recommendations]
+    
+    B4 --> B16[NLP Processing]
+    B16 --> B17[Concept Clarification]
+    B17 --> B18[Simple Explanation]
+    B17 --> B19[Examples]
+    B17 --> B20[Related Topics]
+    
+    B5 --> B21[Question Generation]
+    B21 --> B22[Based on Weak Areas]
+    B22 --> B23[Difficulty Level Match]
+    B23 --> B24[Practice Set Creation]
+    
+    C --> C1[Voice/Text Queries]
+    C1 --> C2["Show last exam results"]
+    C1 --> C3["Which students struggling?"]
+    C1 --> C4["What's my earnings?"]
+    C1 --> C5["Which questions hardest?"]
+    
+    C2 --> C6[Data Retrieval]
+    C6 --> C7[Result Analytics]
+    C7 --> C8[Performance Metrics]
+    C7 --> C9[Visual Charts]
+    C7 --> C10[Trends]
+    
+    C3 --> C11[Student Analysis]
+    C11 --> C12[Identify At-risk Students]
+    C12 --> C13[Performance Patterns]
+    C12 --> C14[Intervention Suggestions]
+    C12 --> C15[Action Items]
+    
+    C4 --> C16[Financial Data]
+    C16 --> C17[Total Revenue]
+    C16 --> C18[Exam-wise Breakdown]
+    C16 --> C19[Trends & Forecasts]
+    
+    C5 --> C20[Question Analytics]
+    C20 --> C21[Success Rate Analysis]
+    C21 --> C22[Difficulty Assessment]
+    C22 --> C23[Recommendations]
+    C23 --> C24[Question Improvement Tips]
+    
+    D --> D1[Class Insights]
+    D1 --> D2["Where class spending time?"]
+    D1 --> D3["Students need intervention?"]
+    D1 --> D4["Overall class trends?"]
+    
+    D2 --> D5[Engagement Analysis]
+    D5 --> D6[Time Allocation Patterns]
+    D6 --> D7[Subject-wise Focus]
+    D6 --> D8[Study Habits]
+    D6 --> D9[Optimization Tips]
+    
+    D3 --> D10[Risk Prediction]
+    D10 --> D11[Performance Decline Detection]
+    D11 --> D12[Attendance Correlation]
+    D11 --> D13[Early Warning System]
+    D11 --> D14[Action Recommendations]
+    
+    D4 --> D15[Trend Analysis]
+    D15 --> D16[Progress Tracking]
+    D16 --> D17[Improvement Areas]
+    D16 --> D18[Success Patterns]
+    D16 --> D19[Benchmarking]
+    
+    E --> E1[Department Strategy]
+    E1 --> E2["Department performance summary"]
+    E1 --> E3["Which professors excelling?"]
+    E1 --> E4["Resource allocation tips"]
+    
+    E2 --> E5[Comprehensive Analytics]
+    E5 --> E6[KPI Dashboard]
+    E6 --> E7[Department Ranking]
+    E6 --> E8[Success Metrics]
+    E6 --> E9[Improvement Areas]
+    
+    E3 --> E10[Faculty Evaluation]
+    E10 --> E11[Teaching Effectiveness]
+    E11 --> E12[Student Satisfaction]
+    E11 --> E13[Innovation Metrics]
+    E11 --> E14[Recognition Suggestions]
+    
+    E4 --> E15[Resource Optimization]
+    E15 --> E16[Budget Allocation]
+    E16 --> E17[Infrastructure Needs]
+    E16 --> E18[Staff Requirements]
+    E16 --> E19[Investment Priorities]
+    
+    E --> E20[Parent Communication AI]
+    E20 --> E21[Auto-generate Reports]
+    E21 --> E22[Highlight Improvements]
+    E21 --> E23[Data Visualization]
+    E21 --> E24[Talking Points]
+    
+    F --> F1[Executive Queries]
+    F1 --> F2["Compare departments"]
+    F1 --> F3["College-wide trends"]
+    F1 --> F4["Revenue forecast"]
+    F1 --> F5["What needs attention?"]
+    
+    F2 --> F6[Comparative Analysis]
+    F6 --> F7[Department Benchmarking]
+    F7 --> F8[Strengths & Weaknesses]
+    F7 --> F9[Best Practices]
+    F7 --> F10[Recommendations]
+    
+    F3 --> F11[Institutional Analytics]
+    F11 --> F12[Enrollment Trends]
+    F11 --> F13[Academic Performance]
+    F11 --> F14[Financial Health]
+    F11 --> F15[Quality Metrics]
+    
+    F4 --> F16[Predictive Modeling]
+    F16 --> F17[Revenue Projections]
+    F17 --> F18[Growth Scenarios]
+    F17 --> F19[Risk Assessment]
+    F17 --> F20[Strategic Planning]
+    
+    F5 --> F21[Priority Identification]
+    F21 --> F22[Critical Issues]
+    F22 --> F23[Immediate Actions]
+    F22 --> F24[Long-term Solutions]
+    F22 --> F25[Impact Assessment]
+    
+    F --> F26[Decision Support System]
+    F26 --> F27[Policy Simulation]
+    F27 --> F28[Impact Analysis]
+    F27 --> F29[Scenario Planning]
+    F27 --> F30[Recommendations]
+    
+    style A fill:#9C27B0,stroke:#333,stroke-width:4px,color:#fff
+    style B fill:#4CAF50,stroke:#333,stroke-width:3px,color:#fff
+    style C fill:#2196F3,stroke:#333,stroke-width:3px,color:#fff
+    style D fill:#FF9800,stroke:#333,stroke-width:3px,color:#fff
+    style E fill:#673AB7,stroke:#333,stroke-width:3px,color:#fff
+    style F fill:#F44336,stroke:#333,stroke-width:3px,color:#fff
+                </div>
+            </div>
+
+            <div class="flowchart-container">
+                <h3 class="flowchart-title">10. Data Flow & System Integration</h3>
+                <div class="mermaid">
+graph LR
+    A[User Interface Layer] --> B[API Gateway]
+    B --> C[Authentication Service]
+    C --> D[JWT Validation]
+    D --> E[Role-based Access Control]
+    
+    E --> F[User Management Service]
+    E --> G[Exam Service]
+    E --> H[Analytics Service]
+    E --> I[Payment Service]
+    E --> J[Notification Service]
+    E --> K[AI/ML Service]
+    
+    F --> L[(PostgreSQL)]
+    G --> L
+    H --> M[(MongoDB)]
+    I --> L
+    J --> N[(Redis Cache)]
+    K --> O[(Vector DB)]
+    
+    G --> P[S3 Storage]
+    F --> P
+    
+    I --> Q[Razorpay API]
+    J --> R[SMS Gateway]
+    J --> S[Email Service]
+    K --> T[OpenAI API]
+    
+    L --> U[Backup System]
+    M --> U
+    N --> V[Session Management]
+    
+    H --> W[Real-time Analytics]
+    W --> X[WebSocket]
+    X --> A
+    
+    style A fill:#667eea,stroke:#333,stroke-width:2px,color:#fff
+    style E fill:#764ba2,stroke:#333,stroke-width:3px,color:#fff
+    style L fill:#4CAF50,stroke:#333,stroke-width:2px,color:#fff
+    style K fill:#9C27B0,stroke:#333,stroke-width:2px,color:#fff
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="gradient-bg text-white py-8">
+        <div class="max-w-7xl mx-auto text-center">
+            <p class="text-lg mb-4">Smart Exam & Learning Management System - Project Proposal</p>
+            <p class="text-gray-300">© 2026 - Revolutionizing Education Through Technology</p>
+            <p class="mt-4"><a href="index.html" class="underline hover:text-gray-200">Back to Home</a> | <a href="flowcharts.html" class="underline hover:text-gray-200">View All Flowcharts</a></p>
+        </div>
+    </footer>
+
+    <script>
+        mermaid.initialize({ 
+            startOnLoad: true,
+            theme: 'default',
+            flowchart: {
+                useMaxWidth: true,
+                htmlLabels: true,
+                curve: 'basis'
+            }
+        });
+    </script>
+</body>
+</html>
